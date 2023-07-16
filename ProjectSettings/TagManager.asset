@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Trampoline
   - Invinsible Trampoline
+  - Floor
   layers:
   - Default
   - TransparentFX
