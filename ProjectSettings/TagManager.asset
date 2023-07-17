@@ -11,6 +11,9 @@ TagManager:
   - floor
   - tvItem
   - ringItem
+  - Platform
+  - Floor Box
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -18,6 +21,8 @@ TagManager:
   - 
   - Water
   - UI
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -38,13 +43,17 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Air Enemy
+  - Floor Box
+  - Ground Scanner
+  - Confiner 2D
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4154919665
+    locked: 0
+  - name: Enemy
+    uniqueID: 2814809931
     locked: 0

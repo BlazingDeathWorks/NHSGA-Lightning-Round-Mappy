@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 7447854784349053574}
   m_Layer: 29
   m_Name: Floor Boxes
-  m_TagString: Floor
+  m_TagString: Floor Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
