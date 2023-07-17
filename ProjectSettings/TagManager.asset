@@ -7,6 +7,10 @@ TagManager:
   - tram
   - floor
   - tvItem
+  - ringItem
+  - Trampoline
+  - Invinsible Trampoline
+  - Floor
   layers:
   - Default
   - TransparentFX

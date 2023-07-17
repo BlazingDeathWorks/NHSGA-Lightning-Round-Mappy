@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLives : MonoBehaviour
 {
     public static PlayerLives Instance { get; private set; }
+    public bool CanDie { private get; set; } = true;
     private int lives = 3;
 
     private void Awake()
@@ -14,7 +15,7 @@ public class PlayerLives : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = null;
+        Instance = this;
     }
 
     private void CheckLives()
@@ -27,6 +28,7 @@ public class PlayerLives : MonoBehaviour
 
     public void LoseLife()
     {
+        if (!CanDie) return;
         lives--;
         CheckLives();
     }
