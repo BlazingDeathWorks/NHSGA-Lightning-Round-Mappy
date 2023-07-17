@@ -45,6 +45,17 @@ public class PlayerMovement : MonoBehaviour
                 savedX = 0;
             }
         }
+        else
+        {
+            if (x == 0)
+            {
+                animator.SetBool("isRunning", false);
+            }
+            else
+            {
+                animator.SetBool("isRunning", true);
+            }
+        }
 
         //Start of your "jump"
         if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && canMove == true && !leftPlatform)
@@ -65,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
                 groundedPlayerController = false;
                 fallHandler.StartFall();
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isFalling", true);
             }
         }
     }
@@ -79,11 +92,13 @@ public class PlayerMovement : MonoBehaviour
             if (leftRaycastHit && savedX == -1)
             {
                 fallHandler.StopFall();
+                animator.SetBool("isFalling", false);
                 isHopping = true;
             }
             if (rightRaycastHit && savedX == 1)
             {
                 fallHandler.StopFall();
+                animator.SetBool("isFalling", false);
                 isHopping = true;
             }
         }
