@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 2129964887}
   - component: {fileID: 2129964886}
   - component: {fileID: 2129964888}
+  - component: {fileID: 2129964889}
   m_Layer: 5
   m_Name: 1UP
   m_TagString: Untagged
@@ -1711,7 +1712,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 1040187647
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1792,6 +1793,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+--- !u!95 &2129964889
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129964884}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21cdf62d9c03d440fbd545d0f3f2b218, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3280465926571212271
 PrefabInstance:
   m_ObjectHideFlags: 0

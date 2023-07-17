@@ -6,7 +6,7 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {
-    [SerializeField] private float speed = 1;
+    [SerializeField] private float speed = 2;
     [SerializeField] private TextMeshProUGUI scoreSmall;
 
     private bool isOnTram = false;
