@@ -73,49 +73,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onCollided:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: ActivateEnemyKnockable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onInCollider:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: EnemyOpenInBack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDeCollided:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: ActivateEnemyKnockable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2929357855833324800
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,21 +154,9 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
+      - m_Target: {fileID: 545486114747143136}
         m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: ActivateKnockable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: KnockEnemyInFront
+        m_MethodName: ActivatePlayerKnockable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -220,113 +172,9 @@ MonoBehaviour:
   onDeCollided:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
+      - m_Target: {fileID: 545486114747143136}
         m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: ActivateKnockable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!1 &2929357855898819981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2929357855898819980}
-  - component: {fileID: 2929357855898819983}
-  - component: {fileID: 2929357855898819982}
-  m_Layer: 0
-  m_Name: Speed Up
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2929357855898819980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929357855898819981}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.599, y: 0, z: 0}
-  m_LocalScale: {x: 5.399, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2929357856967469536}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2929357855898819983
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929357855898819981}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &2929357855898819982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929357855898819981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b064f53a2005642bd9c339de5b8d0210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onCollided:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: ActivateSpeedable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onInCollider:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeCollided:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2929357856967469539}
-        m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: ActivateSpeedable
+        m_MethodName: ActivatePlayerKnockable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -425,7 +273,7 @@ Transform:
   m_Children:
   - {fileID: 2929357856350522265}
   m_Father: {fileID: 2929357856967469536}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2929357856655355376
 SpriteRenderer:
@@ -469,7 +317,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.7943868, b: 0.5801887, a: 1}
+  m_Color: {r: 0.34901965, g: 0.5717369, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -489,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2929357856967469536}
   - component: {fileID: 2929357856967469537}
-  - component: {fileID: 2929357856967469539}
+  - component: {fileID: 545486114747143136}
   m_Layer: 0
   m_Name: Attack Door
   m_TagString: Untagged
@@ -505,14 +353,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2929357856967469567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.338, y: 0.8993, z: 0}
-  m_LocalScale: {x: -0.20901296, y: 1.8369676, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.209013, y: 1.8369676, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2929357857044941778}
   - {fileID: 2929357855751990676}
   - {fileID: 2929357855833324803}
-  - {fileID: 2929357855898819980}
   - {fileID: 2929357856655355377}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -559,7 +406,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.67835534, b: 0.3443396, a: 1}
+  m_Color: {r: 0.34509802, g: 0.41580355, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -569,7 +416,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2929357856967469539
+--- !u!114 &545486114747143136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -578,7 +425,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2929357856967469567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7644f34628fcc4ad785d026d086a1ab2, type: 3}
+  m_Script: {fileID: 11500000, guid: 87f5db6c6398243c88757950e1848da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DoorOpened: 0
@@ -586,6 +433,8 @@ MonoBehaviour:
   EnemyBack: {fileID: 2929357855751990677}
   FrontKnockBack: {fileID: 2929357855833324800}
   RegularDoorOpened: {fileID: 2929357856655355342}
+  soundWave: {fileID: 1495822949815040031, guid: 3f05ab52b225448a88c1deffa7e7d749, type: 3}
+  regularDoor: {fileID: 2929357856967469539, guid: e1c26e5911e7b4eefb60978b37eff6b3, type: 3}
 --- !u!1 &2929357857044941779
 GameObject:
   m_ObjectHideFlags: 0
