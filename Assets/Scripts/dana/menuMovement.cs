@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class menuMovement : MonoBehaviour
 {
-    [SerializeField] public GameObject gb;
-    [SerializeField] public float moveSpeed = 10;
+    
+    [SerializeField] public float moveSpeed = 2;
     // Start is called before the first frame update
     
 
