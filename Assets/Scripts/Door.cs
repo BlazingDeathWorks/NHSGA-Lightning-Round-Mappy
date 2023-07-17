@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public abstract class Door : MonoBehaviour
 {
-    [SerializeField] protected bool DoorOpened = false;
+    public bool DoorOpened = false;
     [SerializeField] [field: FormerlySerializedAs("doorClosedCollision")] protected GameObject DoorClosedCollision;
     [SerializeField] [field: FormerlySerializedAs("enemyBack")] protected GameObject EnemyBack;
     [SerializeField] [field: FormerlySerializedAs("frontKnockBack")] protected GameObject FrontKnockBack;
@@ -50,6 +50,11 @@ public abstract class Door : MonoBehaviour
         RegularDoorOpened.SetActive(false);
     }
 
+    protected virtual void OnActivate()
+    {
+
+    }
+
     public void ActivatePlayerKnockable(Collider2D collision)
     {
         playerKnockable = !playerKnockable;
@@ -57,6 +62,7 @@ public abstract class Door : MonoBehaviour
 
     public void FlipDoorOpenState()
     {
+        OnActivate();
         DoorOpened = !DoorOpened;
     }
 }
