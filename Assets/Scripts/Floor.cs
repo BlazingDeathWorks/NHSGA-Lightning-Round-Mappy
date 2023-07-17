@@ -8,9 +8,9 @@ public class Floor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.TryGetComponent(out FloorManager floorManager))
         {
-            FloorManager.Instance.Floor = floor;
+            floorManager.Floor = floor;
         }
     }
 }

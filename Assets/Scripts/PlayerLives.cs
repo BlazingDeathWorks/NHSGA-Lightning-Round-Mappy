@@ -6,7 +6,7 @@ public class PlayerLives : MonoBehaviour
 {
     public static PlayerLives Instance { get; private set; }
     public bool CanDie { private get; set; } = true;
-    private int lives = 3;
+    private static int s_lives = 3;
 
     private void Awake()
     {
@@ -20,16 +20,18 @@ public class PlayerLives : MonoBehaviour
 
     private void CheckLives()
     {
-        if (lives <= 0)
+        if (s_lives <= 0)
         {
             //Game Over
+            return;
         }
+        SceneController.Instance.ReloadScene();
     }
 
     public void LoseLife()
     {
         if (!CanDie) return;
-        lives--;
+        s_lives--;
         CheckLives();
     }
 }

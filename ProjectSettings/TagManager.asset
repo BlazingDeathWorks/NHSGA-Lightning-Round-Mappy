@@ -4,13 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - tram
-  - floor
-  - tvItem
-  - ringItem
   - Trampoline
+  - Trampoline Rebounder
   - Invinsible Trampoline
-  - Floor
   layers:
   - Default
   - TransparentFX
@@ -43,14 +39,8 @@ TagManager:
   - 
   - 
   - 
-  - Confiner 2D
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 17180095
-    locked: 0
-  - name: Enemy
-    uniqueID: 323399139
     locked: 0
