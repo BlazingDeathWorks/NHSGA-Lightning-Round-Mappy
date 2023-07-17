@@ -14,6 +14,7 @@ TagManager:
   - Platform
   - Floor Box
   - Floor
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -38,6 +38,7 @@ public class PlayerDoorController : MonoBehaviour
             hitInfo.transform.GetComponentInParent<Door>().FlipDoorOpenState();
             canActivateDoor = false;
         }
+        canActivateDoor = false;
     }
 
     private void OnDrawGizmos()

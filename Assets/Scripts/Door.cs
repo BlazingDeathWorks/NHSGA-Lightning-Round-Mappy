@@ -10,12 +10,16 @@ public abstract class Door : MonoBehaviour
     [SerializeField] [field: FormerlySerializedAs("enemyBack")] protected GameObject EnemyBack;
     [SerializeField] [field: FormerlySerializedAs("frontKnockBack")] protected GameObject FrontKnockBack;
     [SerializeField] [field: FormerlySerializedAs("regularDoorOpened")] protected GameObject RegularDoorOpened;
-    private bool previousDoorOpenedState = false;
+    protected bool StateChangedThisFrame { get; private set; } = false;
+    protected bool PreviousDoorOpenedState { get; private set; } = false;
+    private bool playerKnockable;
 
     protected virtual void Update()
     {
-        if (DoorOpened != previousDoorOpenedState)
+        StateChangedThisFrame = false;
+        if (DoorOpened != PreviousDoorOpenedState)
         {
+            StateChangedThisFrame = true;
             if (DoorOpened)
             {
                 OnDoorOpen();
@@ -24,7 +28,13 @@ public abstract class Door : MonoBehaviour
             {
                 OnDoorClose();
             }
-            previousDoorOpenedState = DoorOpened;
+            PreviousDoorOpenedState = DoorOpened;
+        }
+
+        if (playerKnockable && StateChangedThisFrame)
+        {
+            //Knock Player
+            Debug.Log("Knock Back Player");
         }
     }
 
@@ -38,6 +48,11 @@ public abstract class Door : MonoBehaviour
     {
         DoorClosedCollision.SetActive(true);
         RegularDoorOpened.SetActive(false);
+    }
+
+    public void ActivatePlayerKnockable(Collider2D collision)
+    {
+        playerKnockable = !playerKnockable;
     }
 
     public void FlipDoorOpenState()
