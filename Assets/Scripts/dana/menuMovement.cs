@@ -6,10 +6,7 @@ public class menuMovement : MonoBehaviour
 {
     
     [SerializeField] public float moveSpeed = 2;
-    // Start is called before the first frame update
     
-
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.x > -9.41)

@@ -15,6 +15,9 @@ TagManager:
   - Floor Box
   - Floor
   - Enemy
+  - crownItem
+  - necklaceItem
+  - gemItem
   layers:
   - Default
   - TransparentFX

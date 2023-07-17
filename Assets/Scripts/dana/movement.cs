@@ -6,7 +6,7 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {
-    //player movement
+    //player movement ignore this
     [SerializeField] private float speed = 2;
     private bool isOnTram = false;
     [SerializeField] private float x;
@@ -14,7 +14,7 @@ public class movement : MonoBehaviour
     [SerializeField] private float floatSpeed = 20;
 
 
-    //items and score
+    //>>>items and score<<<
     public string[] itemTags;
     public static int combo = 1;
     public bool isCombo = false;
@@ -22,30 +22,26 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform canvas;
     [SerializeField] private float size = 1;
 
-
+    //don't import ignore this
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    //don't import ignore this
     private void Start()
     {
         itemTags = new string[2];
     }
-
+    //don't import ignore this
     private void Update()
     {
         x = Input.GetAxisRaw("Horizontal");
-        
-
-
         if (x != 0)
         {
             isOnTram = false;
         }
         if (isOnTram)
         {
-            //rb.transform.position += Vector3.up * floatSpeed * Time.deltaTime;
             Vector3 moveTo = new Vector3(0, floatSpeed * Time.deltaTime, 0);
             if (rb.transform.position.y < 4.5)
             {
@@ -56,21 +52,17 @@ public class movement : MonoBehaviour
                 isOnTram = false;
             }
         }
-
         if (x == 0) return;
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * x, transform.localScale.y, transform.localScale.z);
 
 
     }
-
+    //don't import ignore this
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(x, rb.velocity.y) * speed;
-
-        
     }
-
-    //ignore this
+    //don't import ignore this
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("tram"))
@@ -91,7 +83,9 @@ public class movement : MonoBehaviour
         }
     }
 
-    //combo system
+
+
+    //>>>score + items<<<
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("tvItem"))
@@ -106,7 +100,23 @@ public class movement : MonoBehaviour
         {
             addScore(collision, 200);
         }
+        else if(collision.gameObject.CompareTag("gemItem"))
+        {
+            addScore(collision, 300);
+        }
+        else if (collision.gameObject.CompareTag("necklaceItem"))
+        {
+            addScore(collision, 400);
+        }
+        else if (collision.gameObject.CompareTag("crownItem"))
+        {
+            addScore(collision, 500);
+        }
+
+
+        //add more items
     }
+    //>>>score + items<<<
     private void addScore(Collider2D collision, int score)
     {
         itemTags[1] = collision.gameObject.tag;
@@ -136,10 +146,10 @@ public class movement : MonoBehaviour
 
         
         GameObject pointDisplayText = Instantiate(pointsDisplay, pos, Quaternion.identity);
-        pointDisplayText.GetComponent<RectTransform>().parent = canvas;
+        pointDisplayText.GetComponent<RectTransform>().SetParent(canvas);
+        //pointDisplayText.GetComponent<RectTransform>().parent = canvas;
 
         TMP_Text smallScoreText = pointDisplayText.GetComponent<TMP_Text>();
-        //string displaySmallScore =
 
         if (isCombo)
         {
