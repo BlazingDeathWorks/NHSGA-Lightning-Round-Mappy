@@ -11,11 +11,13 @@ public class PlayerDoorController : MonoBehaviour
 
     private void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
     private void FixedUpdate()
     {
+        if (playerMovement == null) return;
+
         if (playerMovement.CanMove)
         {
             hitInfo = Physics2D.Raycast(transform.position, new Vector2(Mathf.Sign(transform.parent.localScale.x) * -1, 0), raycastDistance, whatIsDoorCollision);
@@ -24,6 +26,9 @@ public class PlayerDoorController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (!Application.isPlaying) return;
+        if (playerMovement == null) return;
+        if (!playerMovement.CanMove) return;
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + new Vector2(Mathf.Sign(transform.parent.localScale.x) * -1 * raycastDistance, 0));
     }
 }

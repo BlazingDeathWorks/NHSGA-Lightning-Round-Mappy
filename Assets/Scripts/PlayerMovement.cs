@@ -107,7 +107,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Invinsible Trampoline"))
         {
+            gameObject.layer = LayerMask.NameToLayer("Air Enemy");
             moveTowardsPos = collision.transform.parent.position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Invinsible Trampoline"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
         }
     }
 
