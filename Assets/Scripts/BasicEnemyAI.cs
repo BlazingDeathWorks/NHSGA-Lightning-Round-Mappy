@@ -123,6 +123,11 @@ public class BasicEnemyAI : MonoBehaviour
             raycastThroughFloor = false;
             canMove = true;
         }
+
+        if (collision.gameObject.CompareTag("Attack Door"))
+        {
+            FlipEnemy();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -172,7 +177,7 @@ public class BasicEnemyAI : MonoBehaviour
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * Mathf.Sign(transform.localScale.x) * raycastDistance);
     }
 
-    //TODO: Use this when we get to door interactions
+    //Use this when we get to door interactions
     private void FlipEnemy()
     {
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
