@@ -27,6 +27,12 @@ public class HierarchyManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        Instance = null;
+        hierarchyDict.Clear();
+    }
+
     public GameObject GetHierarchyObject(string key)
     {
         return hierarchyDict[key];

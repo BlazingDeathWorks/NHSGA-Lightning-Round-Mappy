@@ -31,16 +31,21 @@ public class BasicEnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
+    }
 
+    private void Start()
+    {
         GameObject player = HierarchyManager.Instance.GetHierarchyObject("Player");
-        playerTransform = player.transform;
-        playerFloorManager = player.GetComponent<FloorManager>();
+        playerTransform = player?.transform;
+        playerFloorManager = player?.GetComponent<FloorManager>();
 
         floorTransform = HierarchyManager.Instance.GetHierarchyObject("Floor 1").transform;
     }
 
     private void Update()
     {
+        if (playerTransform == null) return;
+
         if (targetFloor == floorCount && canShootRaycast)
         {
             hopNextFloor = true;
