@@ -95,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
         if (isHopping)
         {
             if (savedX == 0) savedX = Mathf.Sign(transform.localScale.x);
+            //If groundController true then savedX becomes a special calculated value between Mathf.Sign(box.pos.x - pos.x) to guarantee direction
+            if (groundedPlayerController) savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
             rb.velocity = new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower);
             isHopping = false;
         }
@@ -113,9 +115,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform") && !groundedPlayerController)
         {
             PlayerLives.Instance.CanDie = true;
+            groundScanner.ShootRaycast = true;
             leftPlatform = false;
             groundedPlayerController = true;
-            groundScanner.ShootRaycast = true;
             canMove = true;
         }
     }
