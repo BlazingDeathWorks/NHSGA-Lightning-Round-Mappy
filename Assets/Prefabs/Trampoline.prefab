@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2137040241877716930}
   m_Layer: 0
   m_Name: Trampoline Rebound
-  m_TagString: Untagged
+  m_TagString: Trampoline Rebounder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,22 +16,21 @@ public class Trampoline : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Has to be of tag Player or Enemy (Both of which has a FallHandler script)
-        if (collision.gameObject.TryGetComponent(out FallHandler fallHandler))
-        {
-            //Reverse Fall Direction
-            fallHandler.ReverseDirection();
-        }
         if (collision.gameObject.CompareTag("Player"))
         {
-            //This is technically four lives because the player can still bounce off on the third
-            if (++bounceCount >= 3)
+            if (++bounceCount >= 4)
             {
                 //"Destroy" Trampoline but keep it's children
                 sr.enabled = false;
                 boxCollider.enabled = false;
                 return;
             }
+        }
+        //Has to be of tag Player or Enemy (Both of which has a FallHandler script)
+        if (collision.gameObject.TryGetComponent(out FallHandler fallHandler))
+        {
+            //Reverse Fall Direction
+            fallHandler.ReverseDirection();
         }
     }
 

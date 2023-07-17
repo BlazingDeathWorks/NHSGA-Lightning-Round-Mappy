@@ -122,7 +122,7 @@ public class BasicEnemyAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Trampoline"))
+        if (collision.gameObject.CompareTag("Trampoline") || collision.gameObject.CompareTag("Trampoline Rebounder"))
         {
             float distanceX = playerTransform.position.x - transform.position.x;
             if (distanceX != 0)

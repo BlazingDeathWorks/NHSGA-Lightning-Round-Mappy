@@ -8,6 +8,7 @@ TagManager:
   - Trampoline
   - Invinsible Trampoline
   - Floor
+  - Trampoline Rebounder
   layers:
   - Default
   - TransparentFX

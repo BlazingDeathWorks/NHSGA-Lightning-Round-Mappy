@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 1;
     [SerializeField] private float raycastDistance = 1;
     [SerializeField] private LayerMask whatIsFloorBox;
+    [SerializeField] private float raycastYOffset;
     private float x;
     private float savedX;
     private bool canMove = true;
@@ -19,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private GroundScanner groundScanner;
     private FallHandler fallHandler;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -69,8 +72,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!groundedPlayerController)
         {
-            leftRaycastHit = Physics2D.Raycast(transform.position, Vector2.left, raycastDistance, whatIsFloorBox);
-            rightRaycastHit = Physics2D.Raycast(transform.position, Vector2.right, raycastDistance, whatIsFloorBox);
+            leftRaycastHit = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, raycastYOffset), Vector2.left, raycastDistance, whatIsFloorBox);
+            rightRaycastHit = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, raycastYOffset), Vector2.right, raycastDistance, whatIsFloorBox);
 
             if (leftRaycastHit && savedX == -1)
             {
@@ -119,14 +122,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
+        Gizmos.DrawLine((Vector2)transform.position + new Vector2(0, raycastYOffset), (Vector2)transform.position + new Vector2(0, raycastYOffset) + Vector2.left * raycastDistance);
+        Gizmos.DrawLine((Vector2)transform.position + new Vector2(0, raycastYOffset), (Vector2)transform.position + new Vector2(0, raycastYOffset) + Vector2.right * raycastDistance);
     }
 
     private void FlipPlayer()
     {
         if (x == 0 || isHopping) return;
-        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * x, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * x * -1, transform.localScale.y, transform.localScale.z);
     }
 
     public void ResetHopCapabilities()
