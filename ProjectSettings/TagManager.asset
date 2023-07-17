@@ -7,6 +7,10 @@ TagManager:
   - Trampoline
   - Trampoline Rebounder
   - Invinsible Trampoline
+  - tram
+  - floor
+  - tvItem
+  - ringItem
   layers:
   - Default
   - TransparentFX
