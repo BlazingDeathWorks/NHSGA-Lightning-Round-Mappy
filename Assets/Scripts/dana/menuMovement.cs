@@ -12,7 +12,7 @@ public class menuMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > -3.6)
+        if (transform.position.x > -9.41)
         {
             transform.position -= transform.right * moveSpeed * Time.deltaTime;
         }
