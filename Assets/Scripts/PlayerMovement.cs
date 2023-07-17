@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool CanMove => canMove;
     [SerializeField] private float speed = 1;
     [SerializeField] private float raycastDistance = 1;
     [SerializeField] private LayerMask whatIsFloorBox;
