@@ -169,7 +169,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.46842217}
@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137040241947258574}
   - component: {fileID: 2137040241947258573}
+  - component: {fileID: 319424896973568345}
   m_Layer: 0
   m_Name: Trampoline Invinsible Box
   m_TagString: Invinsible Trampoline
@@ -255,3 +256,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 8.261147}
   m_EdgeRadius: 0
+--- !u!114 &319424896973568345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137040241947258575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c28e5668adc54a44bbc21ee5295868e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

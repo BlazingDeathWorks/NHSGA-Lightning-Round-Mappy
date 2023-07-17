@@ -5,16 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 1;
-    [SerializeField] private float hopPower = 1.2f;
-    [SerializeField] private float hopMovingSpeed = 0.2f;
     [SerializeField] private float raycastDistance = 1;
     [SerializeField] private LayerMask whatIsFloorBox;
-    private float originalSpeed;
     private float x;
     private float savedX;
     private bool canMove = true;
     private bool isHopping = false;
     private bool groundedPlayerController = true;
+    private bool leftPlatform;
     private Vector2 moveTowardsPos;
     private RaycastHit2D rightRaycastHit;
     private RaycastHit2D leftRaycastHit;
@@ -27,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
-        originalSpeed = speed;
     }
 
     private void Update()
@@ -39,30 +36,28 @@ public class PlayerMovement : MonoBehaviour
         //Restrict Movement if on trampoline
         if (!groundedPlayerController)
         {
-            if (x == 0) return;
-            if (Mathf.Sign(rb.velocity.y) == -1)
+            if (x != 0 && Mathf.Sign(rb.velocity.y) == -1)
             {
                 savedX = 0;
-                return;
             }
-            return;
         }
 
         //Start of your "jump"
-        if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && canMove == true)
+        if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && canMove == true && !leftPlatform)
         {
             canMove = false;
             isHopping = true;
             PlayerLives.Instance.CanDie = false;
         }
-        else if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && !canMove && Mathf.Sign(rb.velocity.y) == -1)
+        else if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && !canMove && Mathf.Sign(rb.velocity.y) == -1 && !leftPlatform)
         {
             if (!(Vector2.Distance(transform.position, new Vector2(moveTowardsPos.x, transform.position.y)) <= 0.01f))
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(moveTowardsPos.x, transform.position.y), hopMovingSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(moveTowardsPos.x, transform.position.y), HopDataManager.Instance.HopMovingSpeed * Time.deltaTime);
             }
             else
             {
+                leftPlatform = true;
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
                 groundedPlayerController = false;
                 fallHandler.StartFall();
@@ -96,7 +91,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isHopping)
         {
-            rb.velocity = new Vector2(speed * savedX / 2f, hopPower);
+            if (savedX == 0) savedX = Mathf.Sign(transform.localScale.x);
+            rb.velocity = new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower);
             isHopping = false;
         }
     }
@@ -114,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform") && !groundedPlayerController)
         {
             PlayerLives.Instance.CanDie = true;
-            speed = originalSpeed;
+            leftPlatform = false;
             groundedPlayerController = true;
             groundScanner.ShootRaycast = true;
             canMove = true;
@@ -129,7 +125,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipPlayer()
     {
-        if (x == 0 || !canMove) return;
+        if (x == 0 || isHopping) return;
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * x, transform.localScale.y, transform.localScale.z);
+    }
+
+    public void ResetHopCapabilities()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, -0.1f);
+        leftPlatform = false;
     }
 }
