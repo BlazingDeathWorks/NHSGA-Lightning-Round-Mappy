@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class movement : MonoBehaviour
 {
     [SerializeField] private float speed = 1;
+    [SerializeField] private TextMeshProUGUI scoreSmall;
 
-    [SerializeField] private bool isOnTram = false;
+    private bool isOnTram = false;
     [SerializeField] private float x;
     private Rigidbody2D rb;
     [SerializeField] private float floatSpeed = 20;
@@ -88,6 +91,10 @@ public class movement : MonoBehaviour
         if (collision.gameObject.CompareTag("tvItem"))
         {
             addScore(collision, 100);
+
+            Vector3 spawnPos = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
+            //scoreSmall.SetText("100");
+            //Instantiate(scoreSmall, spawnPos, Quaternion.identity);
         }
         else if (collision.gameObject.CompareTag("ringItem"))
         {

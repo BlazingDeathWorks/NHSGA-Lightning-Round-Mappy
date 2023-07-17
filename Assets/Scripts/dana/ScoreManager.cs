@@ -7,9 +7,11 @@ public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager Instance = null;
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private int score = 0;
-    
+    [SerializeField] private int highScore;
+
 
 
     private void Awake()
@@ -20,12 +22,18 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-   
+    private void Start()
+    {
+        highScore = 20000; 
+        highScoreText.SetText(highScore.ToString());
+    }
+
+
 
     public void IncreaseScoreTram()
     {
         score += 10;
-        text.SetText(score.ToString());
+        scoreText.SetText(score.ToString());
     }
 
     //public void IncreaseScoreHit()
@@ -45,8 +53,8 @@ public class ScoreManager : MonoBehaviour
         {
             score += sc;
         }
-        
-        text.SetText(score.ToString());
+
+        scoreText.SetText(score.ToString());
     }
 
     
