@@ -6,16 +6,22 @@ using TMPro;
 
 public class movement : MonoBehaviour
 {
+    //player movement
     [SerializeField] private float speed = 2;
-    [SerializeField] private TextMeshProUGUI scoreSmall;
-
     private bool isOnTram = false;
     [SerializeField] private float x;
     private Rigidbody2D rb;
     [SerializeField] private float floatSpeed = 20;
+
+
+    //items and score
     public string[] itemTags;
     public static int combo = 1;
     public bool isCombo = false;
+    [SerializeField] private GameObject pointsDisplay;
+    [SerializeField] private Transform canvas;
+    [SerializeField] private float size = 1;
+
 
     private void Awake()
     {
@@ -106,7 +112,6 @@ public class movement : MonoBehaviour
         itemTags[1] = collision.gameObject.tag;
         if (itemTags[0] != null)
         {
-            Debug.Log("first:" + itemTags[0]);
             if (itemTags[0].Equals(itemTags[1]))
             {
                 combo++;
@@ -121,12 +126,32 @@ public class movement : MonoBehaviour
         }
         else
         {
-            Debug.Log("null");
             itemTags[0] = collision.gameObject.tag;
         }
 
         Destroy(collision.gameObject);
+
+        GameObject current = collision.gameObject;
+        Vector3 pos = new Vector3(current.transform.position.x + size, current.transform.position.y + size, current.transform.position.z);
+
+        
+        GameObject pointDisplayText = Instantiate(pointsDisplay, pos, Quaternion.identity);
+        pointDisplayText.GetComponent<RectTransform>().parent = canvas;
+
+        TMP_Text smallScoreText = pointDisplayText.GetComponent<TMP_Text>();
+        //string displaySmallScore =
+
+        if (isCombo)
+        {
+            smallScoreText.text = score.ToString() + "×" + combo;
+        }
+        else
+        {
+            smallScoreText.text = score.ToString();
+        }
+
         ScoreManager.Instance.IncreaseScoreItem(score, isCombo);
+        Destroy(smallScoreText, 2);
     }
 }
 
