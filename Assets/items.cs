@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-public class movement : MonoBehaviour
+public class items : MonoBehaviour
 {
-    //player movement ignore this
-    [SerializeField] private float speed = 2;
-    [SerializeField] private float x;
-
-
-    //>>>items and score<<<
     public string[] itemTags;
     public static int combo = 1;
     public bool isCombo = false;
@@ -19,24 +12,11 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform canvas;
     [SerializeField] private float size = 1;
 
-    
-    //don't import ignore this
-    private void Update()
-    {
-        float x = Input.GetAxis("Horizontal");
-        Vector3 movement = new Vector3(x, 0, 0);
-        transform.Translate(movement * speed * Time.deltaTime);
-    }
-
-
-
     private void Start()
     {
         itemTags = new string[2];
     }
 
-
-    //>>>score + items<<<
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("tvItem"))
@@ -47,7 +27,7 @@ public class movement : MonoBehaviour
         {
             addScore(collision, 200);
         }
-        else if(collision.gameObject.CompareTag("gemItem"))
+        else if (collision.gameObject.CompareTag("gemItem"))
         {
             addScore(collision, 300);
         }
@@ -91,7 +71,7 @@ public class movement : MonoBehaviour
         GameObject current = collision.gameObject;
         Vector3 pos = new Vector3(current.transform.position.x + size, current.transform.position.y + size, current.transform.position.z);
 
-        
+
         GameObject pointDisplayText = Instantiate(pointsDisplay, pos, Quaternion.identity);
         pointDisplayText.GetComponent<RectTransform>().SetParent(canvas);
         //pointDisplayText.GetComponent<RectTransform>().parent = canvas;
@@ -111,6 +91,3 @@ public class movement : MonoBehaviour
         Destroy(smallScoreText, 2);
     }
 }
-
-
-
