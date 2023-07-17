@@ -18,6 +18,9 @@ TagManager:
   - crownItem
   - necklaceItem
   - gemItem
+  - Regular Door
+  - Attack Door
+  - Attack
   layers:
   - Default
   - TransparentFX

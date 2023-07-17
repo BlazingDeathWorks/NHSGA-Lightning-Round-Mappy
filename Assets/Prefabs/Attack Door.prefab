@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 2929357857044941781}
   m_Layer: 27
   m_Name: Door Closed Collision
-  m_TagString: Untagged
+  m_TagString: Attack Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
