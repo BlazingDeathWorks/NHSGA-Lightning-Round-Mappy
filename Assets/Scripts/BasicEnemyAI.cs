@@ -8,6 +8,7 @@ public class BasicEnemyAI : MonoBehaviour
     [SerializeField] private float speed = 1;
     [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask whatIsFloorBox;
+    [SerializeField] private float raycastYOffset;
     private int targetFloor;
     private int floorCount;
     private bool canMove = true;
@@ -77,7 +78,7 @@ public class BasicEnemyAI : MonoBehaviour
     { 
         if (canShootRaycast)
         {
-            raycastHit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, raycastDistance, whatIsFloorBox);
+            raycastHit = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, raycastYOffset), Vector2.right * transform.localScale.x, raycastDistance, whatIsFloorBox);
 
             if (!raycastHit && !hopNextFloor)
             {
@@ -122,6 +123,7 @@ public class BasicEnemyAI : MonoBehaviour
             groundScanner.ShootRaycast = true;
             raycastThroughFloor = false;
             canMove = true;
+            groundScanner.Reset();
         }
 
         if (collision.gameObject.CompareTag("Attack Door"))
@@ -174,7 +176,7 @@ public class BasicEnemyAI : MonoBehaviour
         {
             Gizmos.color = Color.white;
         }
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * Mathf.Sign(transform.localScale.x) * raycastDistance);
+        Gizmos.DrawLine((Vector2)transform.position + new Vector2(0, raycastYOffset), (Vector2)transform.position + new Vector2(0, raycastYOffset) + Vector2.right * Mathf.Sign(transform.localScale.x) * raycastDistance);
     }
 
     //Use this when we get to door interactions

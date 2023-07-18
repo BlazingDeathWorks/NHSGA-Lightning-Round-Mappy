@@ -144,6 +144,7 @@ public class PlayerMovement : MonoBehaviour
             leftPlatform = false;
             groundedPlayerController = true;
             canMove = true;
+            groundScanner.Reset();
         }
     }
 
