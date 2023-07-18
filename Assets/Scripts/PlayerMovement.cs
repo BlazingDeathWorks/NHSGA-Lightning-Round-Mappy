@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         //Start of your "jump"
         if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && canMove == true && !leftPlatform)
         {
+            x = 0;
             canMove = false;
             isHopping = true;
             PlayerLives.Instance.CanDie = false;
@@ -110,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isHopping)
         {
+            Debug.Log(savedX);
             if (savedX == 0) savedX = Mathf.Sign(transform.localScale.x);
             //If groundController true then savedX becomes a special calculated value between Mathf.Sign(box.pos.x - pos.x) to guarantee direction
             if (groundedPlayerController) savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
