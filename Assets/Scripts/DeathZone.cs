@@ -8,6 +8,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerLives.Instance.CanDie = true;
             PlayerLives.Instance.LoseLife();
         }
     }
