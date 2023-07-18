@@ -44,7 +44,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScoreItem(int sc, bool isCombo)
     {
-        int comboTimes = movement.combo;
+        int comboTimes = items.combo;
         if (isCombo)
         {
             score += sc * comboTimes;
