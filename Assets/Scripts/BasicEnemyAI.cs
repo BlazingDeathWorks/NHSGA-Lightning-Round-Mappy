@@ -26,12 +26,14 @@ public class BasicEnemyAI : MonoBehaviour
     private FloorManager playerFloorManager;
     private Transform playerTransform;
     private GroundScanner groundScanner;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -50,6 +52,8 @@ public class BasicEnemyAI : MonoBehaviour
         if (targetFloor == floorCount && canShootRaycast)
         {
             hopNextFloor = true;
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isRunning", true);
         }
 
         //Start of your "jump"
@@ -70,6 +74,8 @@ public class BasicEnemyAI : MonoBehaviour
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
                 targetFloor = playerFloorManager.Floor;
                 fallHandler.StartFall();
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isFalling", true);
             }
         }
     }
