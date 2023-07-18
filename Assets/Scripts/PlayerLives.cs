@@ -22,8 +22,7 @@ public class PlayerLives : MonoBehaviour
     {
         if (s_lives <= 0)
         {
-            //Game Over
-            return;
+            //Game Over (return in the future)
         }
         SceneController.Instance.ReloadScene();
     }

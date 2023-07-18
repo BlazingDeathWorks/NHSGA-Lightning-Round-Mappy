@@ -132,6 +132,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Invinsible Trampoline"))
         {
             gameObject.layer = LayerMask.NameToLayer("Player");
+            if (rb.velocity == new Vector2(x * speed, rb.velocity.y))
+            {
+                PlayerLives.Instance.CanDie = true;
+            }
         }
     }
 
