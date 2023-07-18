@@ -44,7 +44,8 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScoreItem(int sc, bool isCombo)
     {
-        int comboTimes = movement.combo;
+        int comboTimes = items.combo;
+        Debug.Log(comboTimes);
         if (isCombo)
         {
             score += sc * comboTimes;
@@ -54,6 +55,7 @@ public class ScoreManager : MonoBehaviour
             score += sc;
         }
 
+        Debug.Log(score);
         scoreText.SetText(score.ToString());
     }
 

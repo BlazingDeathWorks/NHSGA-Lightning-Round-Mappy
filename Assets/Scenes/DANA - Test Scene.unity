@@ -988,8 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3abeafa00cfc430b974315e1955ab65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  x: 0
   itemTags: []
   isCombo: 0
   pointsDisplay: {fileID: 3697068523189118821, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
