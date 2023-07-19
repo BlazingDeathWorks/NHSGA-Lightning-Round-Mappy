@@ -7,17 +7,22 @@ public class Trampoline : MonoBehaviour
     private int bounceCount;
     private SpriteRenderer sr;
     private Collider2D boxCollider;
+    private Animator animator;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            animator.SetBool("isTramMoving", true);
+            Invoke("SetBoolBack", 1);
+
             if (++bounceCount >= 4)
             {
                 //"Destroy" Trampoline but keep it's children
@@ -32,6 +37,12 @@ public class Trampoline : MonoBehaviour
             //Reverse Fall Direction
             fallHandler.ReverseDirection();
         }
+    }
+
+    private void SetBoolBack()
+    {
+        Debug.Log("working????");
+        animator.SetBool("isTramMoving", false);
     }
 
     public void ResetBounceCount()

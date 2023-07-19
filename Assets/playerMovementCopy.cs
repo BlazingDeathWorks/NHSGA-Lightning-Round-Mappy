@@ -62,7 +62,7 @@ public class playerMovementCopy : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
 
         //load next scene
-        //SceneController.Instance.NextScene();
+        SceneController.Instance.NextScene();
     }
 
     private void addScore()

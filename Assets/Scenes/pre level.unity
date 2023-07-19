@@ -1579,7 +1579,10 @@ MonoBehaviour:
   firstBool: 1
   secondBool: 1
   thirdBool: 1
-  count: 0
+  firstYPos: 5
+  firstXPos: 8.4
+  secondYPos: 5.68
+  secondXPos: 8.14
   canvas: {fileID: 648974410}
   questionMarkDisplay: {fileID: 419854825}
 --- !u!1001 &1022061261
