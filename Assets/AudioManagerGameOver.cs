@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class AudioManagerGameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static AudioManagerGameOver Instance { get; private set; }
+    private AudioSource audioSource;
+
+    private void Awake()
     {
-        
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayOneShot(AudioClip audioClip)
     {
-        
+        audioSource.PlayOneShot(audioClip);
     }
 }
