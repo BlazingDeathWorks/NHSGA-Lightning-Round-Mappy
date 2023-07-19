@@ -988,6 +988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3abeafa00cfc430b974315e1955ab65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  x: 0
   itemTags: []
   isCombo: 0
   pointsDisplay: {fileID: 3697068523189118821, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
@@ -1918,18 +1920,6 @@ PrefabInstance:
     - target: {fileID: 3697068523189118820, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3697068523189118820, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.39999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 3697068523189118820, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.39999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 3697068523189118820, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.39999998
       objectReference: {fileID: 0}
     - target: {fileID: 3697068523189118820, guid: 5c0c69ac94e4f43feb8bf3312d9e3900, type: 3}
       propertyPath: m_LocalPosition.x
