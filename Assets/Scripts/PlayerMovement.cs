@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isHopping = false;
     private bool groundedPlayerController = true;
     private bool leftPlatform;
+    private bool hoppingIn = false;
     private Vector2 moveTowardsPos;
     private RaycastHit2D rightRaycastHit;
     private RaycastHit2D leftRaycastHit;
@@ -63,8 +64,11 @@ public class PlayerMovement : MonoBehaviour
         {
             x = 0;
             savedInX = savedX;
+            savedX = 0;
+            groundScanner.ShootRaycast = false;
             canMove = false;
             isHopping = true;
+            hoppingIn = true;
             PlayerLives.Instance.CanDie = false;
         }
         else if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && !canMove && Mathf.Sign(rb.velocity.y) == -1 && !leftPlatform)
@@ -97,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
                 savedInX = savedX;
                 fallHandler.StopFall();
                 animator.SetBool("isFalling", false);
+                hoppingIn = false;
                 isHopping = true;
             }
             if (rightRaycastHit && savedX == 1)
@@ -104,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 savedInX = savedX;
                 fallHandler.StopFall();
                 animator.SetBool("isFalling", false);
+                hoppingIn = false;
                 isHopping = true;
             }
         }
@@ -125,7 +131,15 @@ public class PlayerMovement : MonoBehaviour
             }
             //If groundController true then savedX becomes a special calculated value between Mathf.Sign(box.pos.x - pos.x) to guarantee direction
             if (groundedPlayerController) savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
-            rb.velocity = canMove ? new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower) : new Vector2(speed * savedInX / 2f, HopDataManager.Instance.HopPower);
+            if (hoppingIn)
+            {
+                savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
+                rb.velocity = new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower);
+            }
+            else
+            {
+                rb.velocity = new Vector2(speed * savedInX / 2f, HopDataManager.Instance.HopPower);
+            }
             isHopping = false;
         }
     }
@@ -136,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
             moveTowardsPos = collision.transform.parent.position;
+            groundScanner.SetCurrentGroundedNone();
         }
     }
 
