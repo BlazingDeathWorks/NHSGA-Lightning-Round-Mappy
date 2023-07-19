@@ -25,13 +25,18 @@ public class PlayerLives : MonoBehaviour
     {
         if (s_lives <= 0)
         {
-            Debug.Log("life = 0");
+            Debug.Log("life = " + s_lives);
 
             //Game Over (return in the future)
-            //SceneController.Instance.NextScene();
+            SceneController.Instance.NextScene();
         }
         SceneController.Instance.ReloadScene();
-        
+        //else
+        //{
+        //    SceneController.Instance.ReloadScene();
+        //}
+
+
     }
 
     public void LoseLife()
