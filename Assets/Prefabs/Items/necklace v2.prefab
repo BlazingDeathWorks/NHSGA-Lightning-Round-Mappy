@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 821299951676436125}
   - component: {fileID: 7302798899360909568}
   - component: {fileID: 1439711877873990263}
+  - component: {fileID: -7408922801443027669}
   m_Layer: 0
   m_Name: necklace v2
   m_TagString: necklaceItem
@@ -123,3 +124,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.018357705, y: 0.06884099}
   m_Size: {x: 0.8714992, y: 0.75217795}
   m_Direction: 1
+--- !u!114 &-7408922801443027669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548253647833731034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3111fbb91fda84ef091c3387b3238f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
