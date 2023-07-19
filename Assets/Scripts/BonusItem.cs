@@ -9,7 +9,6 @@ public class BonusItem : MonoBehaviour
     private Paul paul;
     [SerializeField] private GameObject bonusPointsDisplay;
     [SerializeField] private Transform canvas;
-    [SerializeField] private float size = 0;
     public bool canDoStuff = false;
 
     private void Awake()

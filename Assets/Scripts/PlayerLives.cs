@@ -7,6 +7,9 @@ public class PlayerLives : MonoBehaviour
     public static PlayerLives Instance { get; private set; }
     public bool CanDie { private get; set; } = true;
     private static int s_lives = 3;
+    private static int count = 1;
+
+    [SerializeField] List<GameObject> hearts;
 
     private void Awake()
     {
@@ -31,6 +34,10 @@ public class PlayerLives : MonoBehaviour
     {
         if (!CanDie) return;
         s_lives--;
+        if (count == 1 || count == 0)
+        {
+            hearts[count].SetActive(false);
+        }
         CheckLives();
     }
 }
