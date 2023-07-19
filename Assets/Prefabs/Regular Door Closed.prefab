@@ -86,9 +86,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onInCollider:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 2929357856967469539}
         m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
         m_MethodName: EnemyOpenInBack
@@ -101,12 +98,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInCollider:
+    m_PersistentCalls:
+      m_Calls: []
   onDeCollided:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2929357856967469539}
         m_TargetAssemblyTypeName: RegularDoor, Assembly-CSharp
-        m_MethodName: ActivateEnemyKnockable
+        m_MethodName: DeActivateEnemyKnockable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

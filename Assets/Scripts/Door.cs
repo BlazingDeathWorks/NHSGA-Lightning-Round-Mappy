@@ -31,7 +31,7 @@ public abstract class Door : MonoBehaviour
             PreviousDoorOpenedState = DoorOpened;
         }
 
-        if (playerKnockable && StateChangedThisFrame)
+        if (playerKnockable && StateChangedThisFrame && DoorOpened == false)
         {
             //Knock Player
             Debug.Log("Knock Back Player");
@@ -55,6 +55,7 @@ public abstract class Door : MonoBehaviour
 
     }
 
+    //Front - Enter and Exit
     public void ActivatePlayerKnockable(Collider2D collision)
     {
         playerKnockable = !playerKnockable;

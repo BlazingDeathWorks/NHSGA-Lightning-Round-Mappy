@@ -11,14 +11,12 @@ public class RegularDoor : Door
     {
         base.Update();
 
-        //TODO: Fix this
         if (speedable && StateChangedThisFrame)
         {
             //Speed Up Player
             Debug.Log("Speed Up Player");
         }
 
-        //TODO: Fix this
         if (enemyKnockable && StateChangedThisFrame)
         {
             //Knockback Enemy
@@ -26,6 +24,7 @@ public class RegularDoor : Door
         }
     }
 
+    //Front - Enter
     public void KnockEnemyInFront(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == false)
@@ -35,23 +34,49 @@ public class RegularDoor : Door
         }
     }
 
+    //Back - Enter
     public void EnemyOpenInBack(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == false)
         {
             //Enemy Open In Back
             Debug.Log("Enemy Open In Back");
-            ActivatePlayerKnockable(collision);
         }
     }
 
+    //Speedy Front - Enter
     public void ActivateSpeedable(Collider2D collision)
     {
-        speedable = !speedable;
+        if (collision.gameObject.CompareTag("Player") && DoorOpened == true)
+        {
+            speedable = true;
+        }
     }
 
+    //Speedy Front - Exit
+    public void DeActivateSpeedable(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            speedable = false;
+        }
+    }
+
+    //Back - Enter
     public void ActivateEnemyKnockable(Collider2D collision)
     {
-        enemyKnockable = !enemyKnockable;
+        if (collision.gameObject.CompareTag("Enemy") && DoorOpened == true)
+        {
+            enemyKnockable = true;
+        }
+    }
+
+    //Back - Exit
+    public void DeActivateEnemyKnockable(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        { 
+            enemyKnockable = false;
+        }
     }
 }
