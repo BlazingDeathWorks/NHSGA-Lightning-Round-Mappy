@@ -3,7 +3,9 @@ guid: 3111fbb91fda84ef091c3387b3238f69
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bonusPointsDisplay: {fileID: 3697068523189118821, guid: 2044e54d33a5346d7a43fa8aaad6309c, type: 3}
+  - canvas: {fileID: 8445491863383914717, guid: 6298832dab15147e6b5b189c67581216, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

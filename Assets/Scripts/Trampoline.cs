@@ -18,10 +18,14 @@ public class Trampoline : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        animator.SetBool("isTramMoving", true);
+        Invoke("SetBoolBack", 0.4f);
+
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            animator.SetBool("isTramMoving", true);
-            Invoke("SetBoolBack", 1);
+            
 
             if (++bounceCount >= 4)
             {
@@ -41,7 +45,6 @@ public class Trampoline : MonoBehaviour
 
     private void SetBoolBack()
     {
-        Debug.Log("working????");
         animator.SetBool("isTramMoving", false);
     }
 

@@ -44,7 +44,7 @@ public class items : MonoBehaviour
         //add more items
     }
     //>>>score + items<<<
-    private void addScore(Collider2D collision, int score)
+    public void addScore(Collider2D collision, int score)
     {
         itemTags[1] = collision.gameObject.tag;
         if (itemTags[0] != null)
