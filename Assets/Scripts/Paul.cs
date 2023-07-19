@@ -208,8 +208,8 @@ public class Paul : MonoBehaviour
         //Start timer - when timer ends, remove BonusItem, resort order, re-enable stuff
         if (collision.gameObject.CompareTag("tvItem") || collision.gameObject.CompareTag("ringItem") || collision.gameObject.CompareTag("gemItem") || collision.gameObject.CompareTag("necklaceItem") || collision.gameObject.CompareTag("crownItem"))
         {
-            //int rand = Random.Range(1, 11);
-            //if (rand != 1) return;
+            int rand = Random.Range(1, 11);
+            if (rand != 1) return;
             if (previousColliderItem == collision) return;
             previousColliderItem = collision;
             sr.sortingLayerName = "Paul Mode";
