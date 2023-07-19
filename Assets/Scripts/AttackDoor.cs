@@ -23,6 +23,8 @@ public class AttackDoor : Door
 
         Door doorInstance = Instantiate(regularDoor, transform.position, Quaternion.identity);
         doorInstance.DoorOpened = true;
+        doorInstance.transform.localScale = new Vector3(Mathf.Abs(doorInstance.transform.localScale.x) * Mathf.Sign(transform.localScale.x), doorInstance.transform.localScale.y, doorInstance.transform.localScale.z);
+        doorInstance.Initialize();
         Destroy(gameObject);
     }
 }

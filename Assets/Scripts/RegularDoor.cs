@@ -6,22 +6,35 @@ public class RegularDoor : Door
 {
     private bool speedable = false;
     private bool enemyKnockable;
+    private bool playerKnockableBack;
 
     protected override void Update()
     {
         base.Update();
 
-        if (speedable && StateChangedThisFrame)
+        if (speedable && StateChangedThisFrame && PreviousDoorOpenedState == true)
         {
             //Speed Up Player
             Debug.Log("Speed Up Player");
+            speedable = false;
         }
 
-        if (enemyKnockable && StateChangedThisFrame)
+        if (enemyKnockable && StateChangedThisFrame && PreviousDoorOpenedState == true)
         {
             //Knockback Enemy
             Debug.Log("Knock Back Enemy");
+            enemyKnockable = false;
         }
+
+        if (playerKnockableBack && StateChangedThisFrame && PreviousDoorOpenedState == true)
+        {
+            //Knockback Player Back Door
+            Debug.Log("Knock Back Player Back Door");
+            playerKnockableBack = false;
+        }
+
+        //THIS NEEDS TO BE AT THE END OF UPDATE
+        ResetStateChangedThisFrame();
     }
 
     //Front - Enter
@@ -77,6 +90,24 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy"))
         { 
             enemyKnockable = false;
+        }
+    }
+
+    //Back - Enter
+    public void ActivatePlayerKnockableBack(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && DoorOpened == true)
+        {
+            playerKnockableBack = true;
+        }
+    }
+
+    //Back - Exit
+    public void DeActivatePlayerKnockableBack(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerKnockableBack = false;
         }
     }
 }

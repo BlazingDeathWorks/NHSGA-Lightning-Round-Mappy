@@ -13,11 +13,11 @@ public abstract class Door : MonoBehaviour
     protected bool StateChangedThisFrame { get; private set; } = false;
     protected bool PreviousDoorOpenedState { get; private set; } = false;
     private bool playerKnockable;
+    private bool activated;
 
     protected virtual void Update()
     {
-        StateChangedThisFrame = false;
-        if (DoorOpened != PreviousDoorOpenedState)
+        if (activated)
         {
             StateChangedThisFrame = true;
             if (DoorOpened)
@@ -28,13 +28,15 @@ public abstract class Door : MonoBehaviour
             {
                 OnDoorClose();
             }
-            PreviousDoorOpenedState = DoorOpened;
+            activated = false;
+            OnActivate();
         }
 
-        if (playerKnockable && StateChangedThisFrame && DoorOpened == false)
+        if (playerKnockable && StateChangedThisFrame && PreviousDoorOpenedState == false)
         {
             //Knock Player
             Debug.Log("Knock Back Player");
+            playerKnockable = false;
         }
     }
 
@@ -55,15 +57,43 @@ public abstract class Door : MonoBehaviour
 
     }
 
-    //Front - Enter and Exit
+    protected void ResetStateChangedThisFrame()
+    {
+        StateChangedThisFrame = false;
+    }
+
+    //Front - Enter
     public void ActivatePlayerKnockable(Collider2D collision)
     {
-        playerKnockable = !playerKnockable;
+        if (!collision.gameObject.CompareTag("Player")) return;
+        playerKnockable = true;
+    }
+
+    //Front - Exit
+    public void DeActivatePlayerKnockable(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerKnockable = false;
+        }
     }
 
     public void FlipDoorOpenState()
     {
-        OnActivate();
+        PreviousDoorOpenedState = DoorOpened;
         DoorOpened = !DoorOpened;
+        activated = true;
+    }
+
+    public void Initialize()
+    {
+        if (DoorOpened)
+        {
+            OnDoorOpen();
+        }
+        else
+        {
+            OnDoorClose();
+        }
     }
 }
