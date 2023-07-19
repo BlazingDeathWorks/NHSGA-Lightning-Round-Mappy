@@ -31,7 +31,11 @@ public class playerMovementCopy : MonoBehaviour
     [SerializeField] private bool firstBool = true;
     [SerializeField] private bool secondBool = true;
     [SerializeField] private bool thirdBool = true;
-    [SerializeField] private float count = 9f;
+    [SerializeField] private float firstYPos = 5f;
+    [SerializeField] private float firstXPos = 8.4f;
+    [SerializeField] private float secondYPos = 5.68f;
+    [SerializeField] private float secondXPos = 8.14f;
+
     [SerializeField] private Transform canvas;
     [SerializeField] private GameObject questionMarkDisplay;
 
@@ -41,11 +45,6 @@ public class playerMovementCopy : MonoBehaviour
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
         animator = GetComponent<Animator>();
-    }
-
-    private void Start()
-    {
-        count = 8.64f;
     }
 
     IEnumerator turnAround()
@@ -81,20 +80,20 @@ public class playerMovementCopy : MonoBehaviour
     private void Update()
     {
         
-        if (transform.position.x < count && firstBool)
+        if (transform.position.x < firstXPos && firstBool)
         {
             x = 1;
         }
-        else if (transform.position.x >= count && transform.position.y < 5)
+        else if (transform.position.x >= firstXPos && transform.position.y < firstYPos)
         {
             firstBool = false;
         }
 
-        if (secondBool && !firstBool && transform.position.y > 5.68 && transform.position.x > 8.14)
+        if (secondBool && !firstBool && transform.position.y > secondYPos && transform.position.x > secondXPos)
         {
             x = -1;
         }
-        else if (!firstBool && transform.position.x <= 8.14)
+        else if (!firstBool && transform.position.x <= secondXPos)
         {
             secondBool = false;
             x = 0;
