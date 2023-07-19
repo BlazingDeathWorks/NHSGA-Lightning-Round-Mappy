@@ -7,6 +7,8 @@ public class RegularDoor : Door
     private bool speedable = false;
     private bool enemyKnockable;
     private bool playerKnockableBack;
+    private PlayerKnockbackController playerKnockbackController;
+    [SerializeField] private GameObject speedUpTransform;
 
     protected override void Update()
     {
@@ -17,13 +19,18 @@ public class RegularDoor : Door
             //Speed Up Player
             Debug.Log("Speed Up Player");
             speedable = false;
+            if (playerKnockbackController != null)
+            {
+                //We don't need to use the usual knockback function
+                playerKnockbackController.Knockback();
+            }
         }
 
         if (enemyKnockable && StateChangedThisFrame && PreviousDoorOpenedState == true)
         {
             //Knockback Enemy
-            Debug.Log("Knock Back Enemy");
             enemyKnockable = false;
+            KnockbackAll();
         }
 
         if (playerKnockableBack && StateChangedThisFrame && PreviousDoorOpenedState == true)
@@ -31,6 +38,7 @@ public class RegularDoor : Door
             //Knockback Player Back Door
             Debug.Log("Knock Back Player Back Door");
             playerKnockableBack = false;
+            KnockbackAll();
         }
 
         //THIS NEEDS TO BE AT THE END OF UPDATE
@@ -43,7 +51,9 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == false)
         {
             //Knock back enemy
-            Debug.Log("Knock Back Enemy");
+            RegisterKnockbackController(collision);
+            KnockbackAll();
+            RemoveKnockbackController(collision);
         }
     }
 
@@ -53,7 +63,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == false)
         {
             //Enemy Open In Back
-            Debug.Log("Enemy Open In Back");
+            FlipDoorOpenState();
         }
     }
 
@@ -63,6 +73,9 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Player") && DoorOpened == true)
         {
             speedable = true;
+            PlayerKnockbackController controller = collision.GetComponentInChildren<PlayerKnockbackController>();
+            controller.SetDirection(speedUpTransform.transform.right);
+            playerKnockbackController = controller;
         }
     }
 
@@ -72,6 +85,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Player"))
         {
             speedable = false;
+            playerKnockbackController = null;
         }
     }
 
@@ -81,6 +95,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == true)
         {
             enemyKnockable = true;
+            RegisterKnockbackController(collision, EnemyBack.transform.right);
         }
     }
 
@@ -90,6 +105,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy"))
         { 
             enemyKnockable = false;
+            RemoveKnockbackController(collision);
         }
     }
 
@@ -99,6 +115,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Player") && DoorOpened == true)
         {
             playerKnockableBack = true;
+            RegisterKnockbackController(collision, EnemyBack.transform.right);
         }
     }
 
@@ -108,6 +125,18 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Player"))
         {
             playerKnockableBack = false;
+            RemoveKnockbackController(collision);
+        }
+    }
+
+    public void ExplodeEnemy(Collider2D collision)
+    {
+        if (playerKnockbackController == null) return;
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (!playerKnockbackController.Knockbackable) return;
+            Debug.Log("Enemy should become unconscious");
+            Destroy(collision.gameObject);
         }
     }
 }

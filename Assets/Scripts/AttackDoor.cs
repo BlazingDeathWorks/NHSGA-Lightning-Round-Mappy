@@ -7,10 +7,15 @@ public class AttackDoor : Door
     [SerializeField] private SoundWave soundWave;
     [SerializeField] private Door regularDoor;
 
-    protected override void OnActivate()
+    protected override void Update()
     {
-        base.OnActivate();
-        InstantiateSoundWave();
+        base.Update();
+        if (StateChangedThisFrame)
+        {
+            InstantiateSoundWave();
+        }
+
+        ResetStateChangedThisFrame();
     }
 
     private void InstantiateSoundWave()

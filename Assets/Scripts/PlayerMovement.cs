@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private GroundScanner groundScanner;
     private FallHandler fallHandler;
     private Animator animator;
+    private GenericKnockbackController genericKnockbackController;
+    private PlayerKnockbackController playerKnockbackController;
 
     private void Awake()
     {
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
         animator = GetComponent<Animator>();
+        genericKnockbackController = GetComponent<GenericKnockbackController>();
+        playerKnockbackController = GetComponentInChildren<PlayerKnockbackController>();
     }
 
     private void Update()
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (canMove)
+        if (canMove && !genericKnockbackController.Knockbackable && !playerKnockbackController.Knockbackable)
         {
             rb.velocity = new Vector2(x * speed, rb.velocity.y);
         }
