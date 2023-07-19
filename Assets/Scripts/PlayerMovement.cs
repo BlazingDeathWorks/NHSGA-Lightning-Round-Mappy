@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float raycastYOffset;
     private float x;
     private float savedX;
+    private float savedInX;
     private bool canMove = true;
     private bool isHopping = false;
     private bool groundedPlayerController = true;
@@ -61,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         if (groundScanner.CurrentGroundedObject == GroundedObjectType.None && canMove == true && !leftPlatform)
         {
             x = 0;
+            savedInX = savedX;
             canMove = false;
             isHopping = true;
             PlayerLives.Instance.CanDie = false;
@@ -92,12 +94,14 @@ public class PlayerMovement : MonoBehaviour
 
             if (leftRaycastHit && savedX == -1)
             {
+                savedInX = savedX;
                 fallHandler.StopFall();
                 animator.SetBool("isFalling", false);
                 isHopping = true;
             }
             if (rightRaycastHit && savedX == 1)
             {
+                savedInX = savedX;
                 fallHandler.StopFall();
                 animator.SetBool("isFalling", false);
                 isHopping = true;
@@ -111,11 +115,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (isHopping)
         {
-            Debug.Log(savedX);
-            if (savedX == 0) savedX = Mathf.Sign(transform.localScale.x);
+            if (savedX == 0)
+            {
+                savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
+            }
+            if (savedInX == 0)
+            {
+                savedInX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
+            }
             //If groundController true then savedX becomes a special calculated value between Mathf.Sign(box.pos.x - pos.x) to guarantee direction
             if (groundedPlayerController) savedX = Mathf.Sign(moveTowardsPos.x - transform.position.x);
-            rb.velocity = new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower);
+            rb.velocity = canMove ? new Vector2(speed * savedX / 2f, HopDataManager.Instance.HopPower) : new Vector2(speed * savedInX / 2f, HopDataManager.Instance.HopPower);
             isHopping = false;
         }
     }

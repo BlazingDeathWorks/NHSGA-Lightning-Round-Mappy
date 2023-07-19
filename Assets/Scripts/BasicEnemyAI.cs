@@ -118,11 +118,6 @@ public class BasicEnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerLives.Instance.LoseLife();
-        }
-
         if (collision.gameObject.CompareTag("Platform"))
         {
             leftPlatform = false;
@@ -130,6 +125,7 @@ public class BasicEnemyAI : MonoBehaviour
             raycastThroughFloor = false;
             canMove = true;
             groundScanner.Reset();
+            canShootRaycast = false;
         }
 
         if (collision.gameObject.CompareTag("Attack Door"))
@@ -140,7 +136,7 @@ public class BasicEnemyAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Trampoline") || collision.gameObject.CompareTag("Trampoline Rebounder"))
+        if (collision.gameObject.CompareTag("Trampoline"))
         {
             float distanceX = playerTransform.position.x - transform.position.x;
             if (distanceX != 0)
@@ -157,10 +153,31 @@ public class BasicEnemyAI : MonoBehaviour
             canShootRaycast = true;
         }
 
+        if (collision.gameObject.CompareTag("Trampoline Rebounder"))
+        {
+            float distanceX = playerTransform.position.x - transform.position.x;
+            if (distanceX != 0)
+            {
+                transform.localScale = new Vector3(Mathf.Sign(distanceX) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else
+            {
+                transform.localScale = new Vector3(Mathf.Sign(floorTransform.position.x - transform.position.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+
+            targetFloor = playerFloorManager.Floor;
+            floorCount = 0;
+            canShootRaycast = false;
+        }
+
         if (collision.gameObject.CompareTag("Invinsible Trampoline"))
         {
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
             moveTowardsPos = collision.transform.parent.position;
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerLives.Instance.LoseLife();
         }
     }
 
