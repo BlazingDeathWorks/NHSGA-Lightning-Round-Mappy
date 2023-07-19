@@ -14,6 +14,7 @@ public abstract class Door : MonoBehaviour
     protected bool PreviousDoorOpenedState { get; private set; } = false;
     private bool playerKnockable;
     private bool activated;
+    private List<GenericKnockbackController> genericKnockbackControllers = new List<GenericKnockbackController>();
 
     protected virtual void Update()
     {
@@ -29,13 +30,12 @@ public abstract class Door : MonoBehaviour
                 OnDoorClose();
             }
             activated = false;
-            OnActivate();
         }
 
         if (playerKnockable && StateChangedThisFrame && PreviousDoorOpenedState == false)
         {
-            //Knock Player
-            Debug.Log("Knock Back Player");
+            //Knock Back Player
+            KnockbackAll();
             playerKnockable = false;
         }
     }
@@ -52,14 +52,30 @@ public abstract class Door : MonoBehaviour
         RegularDoorOpened.SetActive(false);
     }
 
-    protected virtual void OnActivate()
-    {
-
-    }
-
     protected void ResetStateChangedThisFrame()
     {
         StateChangedThisFrame = false;
+    }
+
+    protected void KnockbackAll()
+    {
+        for (int i = 0; i < genericKnockbackControllers.Count; i++)
+        {
+            genericKnockbackControllers[i].Knockback();
+        }
+    }
+
+    protected void RegisterKnockbackController(Collider2D collision, Vector2? dir = null)
+    {
+        if (dir == null) dir = FrontKnockBack.transform.right;
+        GenericKnockbackController controller = collision.GetComponent<GenericKnockbackController>();
+        controller.SetDirection((Vector2)dir);
+        genericKnockbackControllers.Add(controller);
+    }
+
+    protected void RemoveKnockbackController(Collider2D collision)
+    {
+        genericKnockbackControllers.Remove(collision.GetComponent<GenericKnockbackController>());
     }
 
     //Front - Enter
@@ -67,6 +83,8 @@ public abstract class Door : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
         playerKnockable = true;
+
+        RegisterKnockbackController(collision);
     }
 
     //Front - Exit
@@ -75,6 +93,8 @@ public abstract class Door : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerKnockable = false;
+
+            RemoveKnockbackController(collision);
         }
     }
 
