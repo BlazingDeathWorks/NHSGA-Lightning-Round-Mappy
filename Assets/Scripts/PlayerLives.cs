@@ -26,21 +26,24 @@ public class PlayerLives : MonoBehaviour
         if (s_lives <= 0)
         {
             Debug.Log("life = 0");
+
             //Game Over (return in the future)
+            //SceneController.Instance.NextScene();
         }
         SceneController.Instance.ReloadScene();
+        
     }
 
     public void LoseLife()
     {
         if (!CanDie) return;
         s_lives--;
-        if (count <= 1)
-        {
-            //hearts[count].SetActive(false);
-            Destroy(hearts[count]);
-            count++;
-        }
+        //if (count <= 1)
+        //{
+        //    //hearts[count].SetActive(false);
+        //    Destroy(hearts[count]);
+        //    count++;
+        //}
         CheckLives();
     }
 }
