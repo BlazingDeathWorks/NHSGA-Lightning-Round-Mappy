@@ -12227,7 +12227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170d0360c27f74284b8928358381b6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 50
+  raycastDistance: 2.5
   whatIsDoorCollision:
     serializedVersion: 2
     m_Bits: 134217728
