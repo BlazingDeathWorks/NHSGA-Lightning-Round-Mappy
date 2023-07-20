@@ -15572,6 +15572,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7741441907592191826, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741441907683164778, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7741441909071277314, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -15619,6 +15627,10 @@ PrefabInstance:
     - target: {fileID: 7741441909071277317, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
       propertyPath: m_Name
       value: Side Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741441909071277317, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b5cc16f5e2f048afad47840a29b9d8f, type: 3}
