@@ -18,6 +18,11 @@ public class ComicBookManager : MonoBehaviour
         NextLayer();
     }
 
+    private void Start()
+    {
+        InvokeRepeating("NextLayer", 2, 2);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Return))
