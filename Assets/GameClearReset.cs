@@ -20,8 +20,6 @@ public class GameClearReset : MonoBehaviour
         {
             AudioManagerGameOver.Instance.audioSource.Pause();
             Application.Quit();
-
         }
-
     }
 }

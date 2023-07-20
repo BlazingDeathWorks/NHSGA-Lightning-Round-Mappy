@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private static int score = 0;
     [SerializeField] private static int highScore;
+    private int randomNumber;
 
 
 
@@ -35,13 +36,20 @@ public class ScoreManager : MonoBehaviour
         scoreText.SetText(score.ToString());
     }
 
-    //public void IncreaseScoreHit()
-    //{
-    //    score += 20;
-    //    text.SetText(score.ToString());
-    //}
+    public void IncreaseScoreHit()
+    {
+        score += 50;
+        scoreText.SetText(score.ToString());
+    }
 
-    
+    public void IncreaseScoreHitMicroWave()
+    {
+        randomNumber = Random.Range(1, 5);
+        score += 100 * randomNumber;
+        scoreText.SetText(score.ToString());
+    }
+
+
 
     public void IncreaseScoreItem(int sc, bool isCombo)
     {
