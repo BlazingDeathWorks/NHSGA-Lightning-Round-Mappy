@@ -167,8 +167,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Attack Door"))
         {
-            animator.SetBool("isSplat", true);
-            StartCoroutine(Unsplat());
+            //animator.SetBool("isSplat", true);
+            //StartCoroutine(Unsplat());
         }
     }
 
