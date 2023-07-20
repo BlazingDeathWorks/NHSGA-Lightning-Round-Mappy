@@ -42,6 +42,8 @@ public class ScoreManager : MonoBehaviour
     //    text.SetText(score.ToString());
     //}
 
+    
+
     public void IncreaseScoreItem(int sc, bool isCombo)
     {
         int comboTimes = items.combo;

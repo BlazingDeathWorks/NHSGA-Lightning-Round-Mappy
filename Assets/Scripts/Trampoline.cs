@@ -31,6 +31,7 @@ public class Trampoline : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            ScoreManager.Instance.IncreaseScoreTram();
             bounceCount++;
             if (bounceCount == 1) sr.color = new Color(0.4156f, 0.6117f, 0.7019f, 1f);
             if (bounceCount == 2) sr.color = new Color(0.9622f, 0.9357f, 0.3691f, 1f);
