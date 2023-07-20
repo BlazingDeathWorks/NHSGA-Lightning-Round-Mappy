@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1758647187787721850}
   - component: {fileID: 1758647187787721851}
   - component: {fileID: 3986010596690712186}
+  - component: {fileID: 5167464379996010762}
   m_Layer: 0
   m_Name: Left - Attack Door
   m_TagString: Untagged
@@ -111,9 +112,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758647187787721829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: 5.87, z: 0}
-  m_LocalScale: {x: 0.209013, y: 1.7340174, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -0.0515, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.6923077}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1758647187982634568}
   - {fileID: 1758647188734404622}
@@ -163,8 +164,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.34509802, g: 0.41580355, b: 1, a: 1}
+  m_Sprite: {fileID: 1646982124, guid: 2222c5f797e594e70ab1fc9bb348efed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,6 +194,27 @@ MonoBehaviour:
   RegularDoorOpened: {fileID: 1758647187566831700}
   soundWave: {fileID: 1495822949815040031, guid: 3f05ab52b225448a88c1deffa7e7d749, type: 3}
   regularDoor: {fileID: 6194882969681718504, guid: efac73e278716487bb5900f42d575e01, type: 3}
+--- !u!95 &5167464379996010762
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758647187787721829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bb7402a3c444425ba8c87eb67451075, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1758647187982634569
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +260,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0049016476, y: 0.0022695065}
+  m_Offset: {x: -0.039683323, y: 0.0019869804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -249,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0450549, y: 0.9970504}
+  m_Size: {x: 0.2451249, y: 1.9913912}
   m_EdgeRadius: 0
 --- !u!1 &1758647188203621900
 GameObject:
@@ -415,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758647188925839514}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -0.065, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -435,7 +457,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1297132, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -446,7 +468,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3338113, y: 1.9957068}
   m_EdgeRadius: 0
 --- !u!114 &1758647188925839519
 MonoBehaviour:
