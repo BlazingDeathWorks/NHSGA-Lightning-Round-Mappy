@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator ResetPlayerLayer()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.2f);
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
 

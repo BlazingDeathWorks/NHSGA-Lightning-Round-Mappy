@@ -72,8 +72,9 @@ public class PlayerLives : MonoBehaviour
     IEnumerator Death()
     {  
         animator.SetBool("isDying", true);
-        Time.timeScale = 0;
-        yield return new WaitForSeconds(3.5f);
+        Time.timeScale = 0.0000001f;
+        yield return new WaitForSeconds(3.5f * Time.timeScale); 
+        Time.timeScale = 1f;
         CheckLives();
     }
 }
