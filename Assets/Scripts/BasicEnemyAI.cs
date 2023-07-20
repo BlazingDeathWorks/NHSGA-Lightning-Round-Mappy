@@ -148,7 +148,7 @@ public class BasicEnemyAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
         }
     }
 
@@ -195,7 +195,7 @@ public class BasicEnemyAI : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
             
         }
     }
@@ -204,7 +204,7 @@ public class BasicEnemyAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
         }
     }
 
