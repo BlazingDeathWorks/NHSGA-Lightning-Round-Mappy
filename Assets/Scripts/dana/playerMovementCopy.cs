@@ -45,6 +45,7 @@ public class playerMovementCopy : MonoBehaviour
         groundScanner = GetComponentInChildren<GroundScanner>();
         fallHandler = GetComponent<FallHandler>();
         animator = GetComponent<Animator>();
+        AudioManagerGameStart.Instance.audioSource.Pause();
     }
 
     IEnumerator turnAround()

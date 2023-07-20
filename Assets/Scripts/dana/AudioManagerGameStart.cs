@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class AudioManagerGameStart : MonoBehaviour
 {
     public static AudioManagerGameStart Instance { get; private set; }
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -25,6 +25,5 @@ public class AudioManagerGameStart : MonoBehaviour
     public void PlayOneShot(AudioClip audioClip)
     {
         audioSource.PlayOneShot(audioClip);
-        audioSource.Stop();
     }
 }
