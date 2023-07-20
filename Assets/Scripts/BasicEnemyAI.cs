@@ -144,6 +144,14 @@ public class BasicEnemyAI : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerLives.Instance.LoseLife();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Trampoline"))
@@ -189,6 +197,14 @@ public class BasicEnemyAI : MonoBehaviour
         {
             PlayerLives.Instance.LoseLife();
             
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerLives.Instance.LoseLife();
         }
     }
 
