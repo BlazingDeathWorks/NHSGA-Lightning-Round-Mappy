@@ -5312,7 +5312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1736959411934865793, guid: 225fd9eb06835480ab0c33f1197c922b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.66
+      value: -1.12
       objectReference: {fileID: 0}
     - target: {fileID: 1736959411934865793, guid: 225fd9eb06835480ab0c33f1197c922b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14314,8 +14314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1117185212}
   highScoreText: {fileID: 782554759}
-  score: 0
-  highScore: 0
 --- !u!4 &2111681056
 Transform:
   m_ObjectHideFlags: 0
