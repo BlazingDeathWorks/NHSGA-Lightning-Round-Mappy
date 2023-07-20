@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Should be on child of Player
+//Should be on child of Player 
 public class PlayerKnockbackController : GenericKnockbackController
 {
     [SerializeField] private BoxCollider2D collisionCollider;
