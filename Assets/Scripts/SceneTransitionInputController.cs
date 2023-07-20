@@ -14,5 +14,6 @@ public class SceneTransitionInputController : MonoBehaviour
         {
             SceneController.Instance.NextScene();
         }
+
     }
 }

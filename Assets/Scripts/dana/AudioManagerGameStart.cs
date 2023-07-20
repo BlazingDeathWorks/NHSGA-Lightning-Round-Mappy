@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class AudioManagerGameStart : MonoBehaviour
 {
     public static AudioManagerGameStart Instance { get; private set; }
@@ -23,5 +25,6 @@ public class AudioManagerGameStart : MonoBehaviour
     public void PlayOneShot(AudioClip audioClip)
     {
         audioSource.PlayOneShot(audioClip);
+        audioSource.Stop();
     }
 }

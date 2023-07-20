@@ -8,19 +8,23 @@ public class Trampoline : MonoBehaviour
     private SpriteRenderer sr;
     private Collider2D boxCollider;
     private Animator animator;
+    public AudioSource trampoline;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+       
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         animator.SetBool("isTramMoving", true);
         Invoke("SetBoolBack", 0.4f);
+        
 
 
         if (collision.gameObject.CompareTag("Player"))
@@ -41,6 +45,8 @@ public class Trampoline : MonoBehaviour
             //Reverse Fall Direction
             fallHandler.ReverseDirection();
         }
+        trampoline.Play();
+
     }
 
     private void SetBoolBack()
