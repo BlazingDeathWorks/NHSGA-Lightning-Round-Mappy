@@ -215,7 +215,9 @@ public class BasicEnemyAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerLives.Instance?.LoseLife();
-            
+            //LifeLossSound
+            //AudioManager.Instance.Play("LifeLossSound");
+
         }
     }
 
@@ -223,6 +225,7 @@ public class BasicEnemyAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            
             PlayerLives.Instance?.LoseLife();
         }
     }

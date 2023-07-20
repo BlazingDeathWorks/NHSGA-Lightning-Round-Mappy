@@ -59,6 +59,7 @@ public class PlayerLives : MonoBehaviour
 
     public void LoseLife()
     {
+        AudioManager.Instance.Play("LifeLossSound");
         if (!CanDie) return;
         if (PlayerLivesManager.Instance.AlreadyDied) return;
         s_lives--;
