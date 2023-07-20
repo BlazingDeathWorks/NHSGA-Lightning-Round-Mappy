@@ -70,7 +70,7 @@ public class RegularDoor : Door
     //Speedy Front - Enter
     public void ActivateSpeedable(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && DoorOpened == true)
+        if (collision.gameObject.CompareTag("Player"))
         {
             speedable = true;
             PlayerKnockbackController controller = collision.GetComponentInChildren<PlayerKnockbackController>();
