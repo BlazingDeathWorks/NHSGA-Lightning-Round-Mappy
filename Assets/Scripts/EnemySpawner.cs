@@ -6,8 +6,6 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner Instance { get; private set; }
     [SerializeField] private float respawnTime = 3;
-    private BasicEnemyAI wolfer;
-    private Paul paul;
 
     private void Awake()
     {
@@ -19,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator RespawnTimer()
+    private IEnumerator RespawnTimer(BasicEnemyAI wolfer, Paul paul)
     {
         yield return new WaitForSecondsRealtime(respawnTime);
         if (wolfer != null)
@@ -39,10 +37,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void RequestNewEnemy(BasicEnemyAI wolfer = null, Paul paul = null)
     {
-        this.wolfer = wolfer;
-        this.paul = paul;
         wolfer?.gameObject.SetActive(false);
         paul?.gameObject.SetActive(false);
-        StartCoroutine(RespawnTimer());
+        StartCoroutine(RespawnTimer(wolfer, paul));
     }
 }

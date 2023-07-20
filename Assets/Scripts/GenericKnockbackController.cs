@@ -44,15 +44,7 @@ public class GenericKnockbackController : MonoBehaviour
 
     private IEnumerator Unsplat()
     {
-        if (CompareTag("Player")) 
-        {
-            yield return new WaitForSecondsRealtime(0.3f);
-            animator.SetBool("isSplat", false);
-        }
-        else 
-        {
-            yield return new WaitForSecondsRealtime(2.5f);
-            animator.SetBool("isSplat", false);
-        }
+        yield return new WaitForSecondsRealtime(0.5f);
+        animator.SetBool("isSplat", false);
     }
 }
