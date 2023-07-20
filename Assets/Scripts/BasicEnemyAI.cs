@@ -150,9 +150,18 @@ public class BasicEnemyAI : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Attack Door"))
         {
+            animator.SetBool("isSplat", true);
+            StartCoroutine(Unsplat());
             FlipEnemy();
         }
     }
+
+    IEnumerator Unsplat()
+    {  
+        yield return new WaitForSeconds(3f);
+        animator.SetBool("isSplat", false);
+    }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {

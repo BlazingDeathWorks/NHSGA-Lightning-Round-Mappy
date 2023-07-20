@@ -164,6 +164,18 @@ public class PlayerMovement : MonoBehaviour
             moveTowardsPos = collision.transform.parent.position;
             groundScanner.SetCurrentGroundedNone();
         }
+
+        if (collision.gameObject.CompareTag("Attack Door"))
+        {
+            animator.SetBool("isSplat", true);
+            StartCoroutine(Unsplat());
+        }
+    }
+
+    IEnumerator Unsplat()
+    {  
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("isSplat", false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

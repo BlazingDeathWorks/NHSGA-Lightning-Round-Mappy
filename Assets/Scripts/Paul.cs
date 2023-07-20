@@ -158,8 +158,16 @@ public class Paul : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Attack Door"))
         {
+            animator.SetBool("isSplat", true);
+            StartCoroutine(Unsplat());
             FlipEnemy();
         }
+    }
+
+    IEnumerator Unsplat()
+    {  
+        yield return new WaitForSeconds(3f);
+        animator.SetBool("isSplat", false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
