@@ -29,15 +29,15 @@ public class items : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("gemItem"))
         {
-            addScore(collision, 300);
+            addScore(collision, 500);
         }
         else if (collision.gameObject.CompareTag("necklaceItem"))
         {
-            addScore(collision, 400);
+            addScore(collision, 300);
         }
         else if (collision.gameObject.CompareTag("crownItem"))
         {
-            addScore(collision, 500);
+            addScore(collision, 400);
         }
 
 
