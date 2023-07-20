@@ -39,6 +39,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (animator.GetBool("isDying")) // Disables movement when dead
+        {
+            rb.gravityScale = 0;
+            rb.simulated = false;
+            return; 
+        }
+
         x = Input.GetAxisRaw("Horizontal");
         savedX = x;
         FlipPlayer();

@@ -7,11 +7,14 @@ public class PlayerLives : MonoBehaviour
     public static PlayerLives Instance { get; private set; }
     public bool CanDie { private get; set; } = true;
     private static int s_lives = 3;
+    private Animator animator;
 
     [SerializeField] public List<GameObject> hearts;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -60,8 +63,15 @@ public class PlayerLives : MonoBehaviour
         if (PlayerLivesManager.Instance.AlreadyDied) return;
         s_lives--;
         PlayerLivesManager.Instance.AlreadyDied = true;
-        CheckLives();
+
+        // ToDo - Make coroutine that runs through death animation then reload the scene
+        StartCoroutine(Death());
     }
 
-
+    IEnumerator Death()
+    {  
+        animator.SetBool("isDying", true);
+        yield return new WaitForSeconds(5f);
+        CheckLives();
+    }
 }
