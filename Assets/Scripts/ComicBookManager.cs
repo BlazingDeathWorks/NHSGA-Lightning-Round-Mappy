@@ -20,6 +20,8 @@ public class ComicBookManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("did it work?");
+        AudioManagerFirst.Instance.audioSource.Pause();
         InvokeRepeating("NextLayer", 2, 2);
     }
 
