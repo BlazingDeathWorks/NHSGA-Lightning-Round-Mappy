@@ -25,13 +25,20 @@ public class GameManager : MonoBehaviour
 
         if (s_firstTime)
         {
+            Debug.Log("First Time This Scene");
             s_firstTime = false;
+            //Clean everything that is saved
+            data = BinarySaveSystem.LoadSystem<ItemGameData>(Application.persistentDataPath + "/itemData.bin");
+            data.ItemObjectID.Clear();
+            BinarySaveSystem.SaveSystem(data, Application.persistentDataPath + "/itemData.bin");
             return;
         }
+
         //If we are reloading the same level...
         //Load Binary Save System String Array
         //Compare to itemObject reference and destroy the ones that are in both lists
         data = BinarySaveSystem.LoadSystem<ItemGameData>(Application.persistentDataPath + "/itemData.bin");
+        Debug.Log("WTF");
         for (int i = 0; i < data.ItemObjectID.Count; i++)
         {
             for (int j = 0; j < itemObjects.Count; j++)

@@ -58,7 +58,6 @@ public class PlayerLives : MonoBehaviour
     {
         if (!CanDie) return;
         if (PlayerLivesManager.Instance.AlreadyDied) return;
-        Debug.Log("ONLY ONCE BOY");
         s_lives--;
         PlayerLivesManager.Instance.AlreadyDied = true;
         CheckLives();
