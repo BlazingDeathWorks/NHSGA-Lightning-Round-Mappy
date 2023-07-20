@@ -8,11 +8,13 @@ public class Trampoline : MonoBehaviour
     private SpriteRenderer sr;
     private Collider2D boxCollider;
     private Animator animator;
+    private Sprite[] sprites;
     
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        sprites = Resources.LoadAll<Sprite>("Trampoline_animation");
         boxCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
        
@@ -29,12 +31,15 @@ public class Trampoline : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-
-            if (++bounceCount >= 4)
+            bounceCount++;
+            if (bounceCount == 1) sr.color = new Color(0.4156f, 0.6117f, 0.7019f, 1f);
+            if (bounceCount == 2) sr.color = new Color(0.9622f, 0.9357f, 0.3691f, 1f);
+            if (bounceCount == 3) sr.color = new Color(0.96f, 0.17f, 0.17f, 1f);
+            if (bounceCount >= 4)
             {
                 //"Destroy" Trampoline but keep it's children
-                sr.enabled = false;
+                //sr.enabled = false;
+                sr.sprite = sprites[6];
                 boxCollider.enabled = false;
                 return;
             }
@@ -54,7 +59,8 @@ public class Trampoline : MonoBehaviour
     }
 
     public void ResetBounceCount()
-    {
+    {   
         bounceCount = 0;
+        sr.color = new Color(1f, 1f, 1f, 1f);
     }
 }
