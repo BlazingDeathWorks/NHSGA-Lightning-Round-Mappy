@@ -46,6 +46,8 @@ public class items : MonoBehaviour
     //>>>score + items<<<
     public void addScore(Collider2D collision, int score)
     {
+        
+        AudioManager.Instance.Play("PickUpSound");
         itemTags[1] = collision.gameObject.tag;
         if (itemTags[0] != null)
         {

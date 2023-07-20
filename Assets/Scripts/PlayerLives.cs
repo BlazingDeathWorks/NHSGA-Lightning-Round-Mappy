@@ -29,12 +29,12 @@ public class PlayerLives : MonoBehaviour
 
             //Game Over (return in the future)
             SceneController.Instance.NextScene();
+            //AudioManager.Instance.Play("LifeLossSound");
         }
-        SceneController.Instance.ReloadScene();
-        //else
-        //{
-        //    SceneController.Instance.ReloadScene();
-        //}
+        else
+        {
+            SceneController.Instance.ReloadScene();
+        }
 
 
     }
@@ -43,12 +43,12 @@ public class PlayerLives : MonoBehaviour
     {
         if (!CanDie) return;
         s_lives--;
-        //if (count <= 1)
-        //{
-        //    //hearts[count].SetActive(false);
-        //    Destroy(hearts[count]);
-        //    count++;
-        //}
+        if (count <= 1)
+        {
+            //hearts[count].SetActive(false);
+            Destroy(hearts[count]);
+            count++;
+        }
         CheckLives();
     }
 }

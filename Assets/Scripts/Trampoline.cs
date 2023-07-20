@@ -8,7 +8,7 @@ public class Trampoline : MonoBehaviour
     private SpriteRenderer sr;
     private Collider2D boxCollider;
     private Animator animator;
-    public AudioSource trampoline;
+    
 
     private void Awake()
     {
@@ -45,8 +45,7 @@ public class Trampoline : MonoBehaviour
             //Reverse Fall Direction
             fallHandler.ReverseDirection();
         }
-        trampoline.Play();
-
+        AudioManager.Instance.Play("TrampolineSound");
     }
 
     private void SetBoolBack()

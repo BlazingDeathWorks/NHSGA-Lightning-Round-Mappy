@@ -198,6 +198,7 @@ public class Paul : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerLives.Instance.LoseLife();
+            
         }
 
         //Check collision with each item tag, give 10% chance to hide behind it
