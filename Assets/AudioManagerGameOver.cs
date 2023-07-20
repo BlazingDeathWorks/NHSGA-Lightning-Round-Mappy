@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManagerGameOver : MonoBehaviour
 {
     public static AudioManagerGameOver Instance { get; private set; }
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {
