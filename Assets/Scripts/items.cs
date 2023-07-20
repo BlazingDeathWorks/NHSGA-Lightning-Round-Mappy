@@ -31,17 +31,17 @@ public class items : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("gemItem"))
         {
-            addScore(collision, 300);
+            addScore(collision, 500);
             GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("necklaceItem"))
         {
-            addScore(collision, 400);
+            addScore(collision, 300);
             GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("crownItem"))
         {
-            addScore(collision, 500);
+            addScore(collision, 400);
             GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
 

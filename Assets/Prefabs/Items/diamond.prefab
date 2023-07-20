@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4871723015501643483}
   - component: {fileID: -6380215899466084790}
   m_Layer: 0
-  m_Name: gem
+  m_Name: diamond
   m_TagString: gemItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ae158ebcbcd34c0f978f5de8edec5ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94a275ea49f9642289017e0a73f3ce3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,3 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3111fbb91fda84ef091c3387b3238f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusPointsDisplay: {fileID: 0}
+  canvas: {fileID: 0}
+  canDoStuff: 0
