@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Zero out score after congrats seen
 public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager Instance = null;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
-    [SerializeField] private int score = 0;
-    [SerializeField] private int highScore;
+    [SerializeField] private static int score = 0;
+    [SerializeField] private static int highScore;
 
 
 
@@ -20,11 +21,9 @@ public class ScoreManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
 
-    private void Start()
-    {
-        highScore = 20000; 
+        scoreText.SetText(score.ToString());
+        highScore = 20000;
         highScoreText.SetText(highScore.ToString());
     }
 
