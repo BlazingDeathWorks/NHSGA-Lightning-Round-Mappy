@@ -56,6 +56,7 @@ public class BasicEnemyAI : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
             rb.velocity = Vector2.zero;
             canMove = false;
+            StartCoroutine(CanMoveFixPlease());
             return;
         }
 
@@ -87,6 +88,15 @@ public class BasicEnemyAI : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isFalling", true);
             }
+        }
+    }
+
+    private IEnumerator CanMoveFixPlease()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        if (canMove == false && rb.velocity == Vector2.zero)
+        {
+            canMove = true;
         }
     }
 

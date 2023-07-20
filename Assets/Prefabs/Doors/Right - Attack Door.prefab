@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2929357855751990677}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 0.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.26279506, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.47440988, y: 2.0064778}
   m_EdgeRadius: 0
 --- !u!114 &2929357855751990678
 MonoBehaviour:
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2929357855833324800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -0.325, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1297132, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -137,7 +137,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3338113, y: 1.9957068}
   m_EdgeRadius: 0
 --- !u!114 &2929357855833324805
 MonoBehaviour:
@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 2929357856967469536}
   - component: {fileID: 2929357856967469537}
   - component: {fileID: 545486114747143136}
+  - component: {fileID: 3219347938742206932}
   m_Layer: 0
   m_Name: Right - Attack Door
   m_TagString: Untagged
@@ -354,8 +355,8 @@ Transform:
   m_GameObject: {fileID: 2929357856967469567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.0515, z: 0}
-  m_LocalScale: {x: -0.209013, y: 1.7340174, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: -0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2929357857044941778}
   - {fileID: 2929357855751990676}
@@ -405,8 +406,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.34509802, g: 0.41580355, b: 1, a: 1}
+  m_Sprite: {fileID: 1646982124, guid: 2222c5f797e594e70ab1fc9bb348efed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -435,6 +436,27 @@ MonoBehaviour:
   RegularDoorOpened: {fileID: 2929357856655355342}
   soundWave: {fileID: 1495822949815040031, guid: 3f05ab52b225448a88c1deffa7e7d749, type: 3}
   regularDoor: {fileID: 2929357856967469539, guid: e1c26e5911e7b4eefb60978b37eff6b3, type: 3}
+--- !u!95 &3219347938742206932
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929357856967469567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bb7402a3c444425ba8c87eb67451075, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2929357857044941779
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +502,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0049016476, y: 0.0022695065}
+  m_Offset: {x: -0.039683323, y: 0.0019869804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -491,5 +513,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0450549, y: 0.9970504}
+  m_Size: {x: 0.2451249, y: 1.9913912}
   m_EdgeRadius: 0
