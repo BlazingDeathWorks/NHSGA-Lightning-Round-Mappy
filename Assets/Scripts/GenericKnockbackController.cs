@@ -19,6 +19,7 @@ public class GenericKnockbackController : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         if (!Knockbackable) return;
+        Rb.velocity = Vector2.zero;
         Rb.velocity = Direction * KnockbackSpeed;
         Knockbackable = false;
     }

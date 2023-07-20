@@ -93,7 +93,6 @@ public class Paul : MonoBehaviour
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
                 targetFloor = Random.Range(0, floorBoxGameObject.transform.childCount);
                 fallHandler.StartFall();
-                Debug.Log("How am I not falling");
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isFalling", true);
             }

@@ -5,7 +5,6 @@ using UnityEngine;
 //Need to update this later to go other way when colliding with door
 public class BasicEnemyAI : MonoBehaviour
 {
-    public bool Fainted { get; set; }
     [SerializeField] private float speed = 1;
     [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask whatIsFloorBox;
@@ -55,8 +54,8 @@ public class BasicEnemyAI : MonoBehaviour
         if (genericKnockbackController.Knockbackable)
         {
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
-            Fainted = true;
             rb.velocity = Vector2.zero;
+            canMove = false;
             return;
         }
 
@@ -115,7 +114,7 @@ public class BasicEnemyAI : MonoBehaviour
             }
         }
 
-        if (canMove && !genericKnockbackController.Knockbackable && !Fainted)
+        if (canMove && !genericKnockbackController.Knockbackable)
         {
             rb.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * speed, rb.velocity.y);
         }

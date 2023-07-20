@@ -36,7 +36,6 @@ public class RegularDoor : Door
         if (playerKnockableBack && StateChangedThisFrame && PreviousDoorOpenedState == true)
         {
             //Knockback Player Back Door
-            Debug.Log("Knock Back Player Back Door");
             playerKnockableBack = false;
             KnockbackAll();
         }
@@ -51,6 +50,7 @@ public class RegularDoor : Door
         if (collision.gameObject.CompareTag("Enemy") && DoorOpened == false)
         {
             //Knock back enemy
+            Debug.Log("KNOCK KNOCK");
             RegisterKnockbackController(collision);
             KnockbackAll();
             RemoveKnockbackController(collision);
@@ -126,17 +126,6 @@ public class RegularDoor : Door
         {
             playerKnockableBack = false;
             RemoveKnockbackController(collision);
-        }
-    }
-
-    public void ExplodeEnemy(Collider2D collision)
-    {
-        if (playerKnockbackController == null) return;
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            if (!playerKnockbackController.Knockbackable) return;
-            Debug.Log("Enemy should become unconscious");
-            Destroy(collision.gameObject);
         }
     }
 }
