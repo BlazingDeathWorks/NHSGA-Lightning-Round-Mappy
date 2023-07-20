@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RegularDoor : Door
 {
@@ -9,6 +10,8 @@ public class RegularDoor : Door
     private bool playerKnockableBack;
     private PlayerKnockbackController playerKnockbackController;
     [SerializeField] private GameObject speedUpTransform;
+    
+    public int randomNumber;
 
     protected override void Update()
     {
@@ -31,6 +34,9 @@ public class RegularDoor : Door
             //Knockback Enemy
             enemyKnockable = false;
             KnockbackAll();
+            //score
+            ScoreManager.Instance.IncreaseScoreHit();
+
         }
 
         if (playerKnockableBack && StateChangedThisFrame && PreviousDoorOpenedState == true)
@@ -54,6 +60,9 @@ public class RegularDoor : Door
             RegisterKnockbackController(collision);
             KnockbackAll();
             RemoveKnockbackController(collision);
+            //score
+            
+            ScoreManager.Instance.IncreaseScoreHit();
         }
     }
 

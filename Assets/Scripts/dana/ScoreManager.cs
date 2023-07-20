@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private static int score = 0;
     [SerializeField] private static int highScore;
-    private int randomNumber;
+    
 
 
 
@@ -42,10 +42,9 @@ public class ScoreManager : MonoBehaviour
         scoreText.SetText(score.ToString());
     }
 
-    public void IncreaseScoreHitMicroWave()
+    public void IncreaseScoreHitMicroWave(int sc)
     {
-        randomNumber = Random.Range(1, 5);
-        score += 100 * randomNumber;
+        score += sc;
         scoreText.SetText(score.ToString());
     }
 
