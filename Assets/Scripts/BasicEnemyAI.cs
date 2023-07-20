@@ -153,6 +153,7 @@ public class BasicEnemyAI : MonoBehaviour
             //animator.SetBool("isSplat", true);
             //StartCoroutine(Unsplat());
             FlipEnemy();
+
         }
     }
 
