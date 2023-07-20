@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class PlayerLives : MonoBehaviour
             Debug.Log("life = " + s_lives);
 
             //Game Over (return in the future)
-            SceneController.Instance.NextScene();
+            SceneManager.LoadScene("game over scene");
             PlayerLivesManager.Instance.AlreadyDied = false;
             s_lives = 3;
             Instance = null;
