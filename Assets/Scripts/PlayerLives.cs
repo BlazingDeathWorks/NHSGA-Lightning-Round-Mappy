@@ -7,7 +7,6 @@ public class PlayerLives : MonoBehaviour
     public static PlayerLives Instance { get; private set; }
     public bool CanDie { private get; set; } = true;
     private static int s_lives = 3;
-    [SerializeField] private static int count = 0;
 
     [SerializeField] public List<GameObject> hearts;
 
@@ -19,6 +18,16 @@ public class PlayerLives : MonoBehaviour
             return;
         }
         Instance = this;
+
+        if (s_lives == 2)
+        {
+            Destroy(hearts[0]);
+        }
+        if (s_lives == 1)
+        {
+            Destroy(hearts[0]);
+            Destroy(hearts[1]);
+        }
     }
 
     private void CheckLives()
@@ -29,11 +38,14 @@ public class PlayerLives : MonoBehaviour
 
             //Game Over (return in the future)
             SceneController.Instance.NextScene();
+            s_lives = 3;
+            Instance = null;
             //AudioManager.Instance.Play("LifeLossSound");
         }
         else
         {
             SceneController.Instance.ReloadScene();
+            Instance = null;
         }
 
 
@@ -43,12 +55,8 @@ public class PlayerLives : MonoBehaviour
     {
         if (!CanDie) return;
         s_lives--;
-        if (count <= 1)
-        {
-            //hearts[count].SetActive(false);
-            Destroy(hearts[count]);
-            count++;
-        }
         CheckLives();
     }
+
+
 }
