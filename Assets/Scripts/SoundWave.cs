@@ -14,7 +14,7 @@ public class SoundWave : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 10);
     }
 
     private void FixedUpdate()
@@ -27,7 +27,14 @@ public class SoundWave : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Get points from the enemy and kill it
-            Destroy(collision.gameObject);
+            if (collision.gameObject.TryGetComponent(out BasicEnemyAI wolfer))
+            {
+                EnemySpawner.Instance?.RequestNewEnemy(wolfer);
+            }
+            if (collision.gameObject.TryGetComponent(out Paul paul))
+            {
+                EnemySpawner.Instance?.RequestNewEnemy(paul: paul);
+            }
         }
     }
 }
