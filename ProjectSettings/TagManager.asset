@@ -70,3 +70,6 @@ TagManager:
   - name: Canvas
     uniqueID: 240224817
     locked: 0
+  - name: Roof
+    uniqueID: 4171535185
+    locked: 0

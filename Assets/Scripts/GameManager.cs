@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
             s_firstTime = false;
             //Clean everything that is saved
             data = BinarySaveSystem.LoadSystem<ItemGameData>(Application.persistentDataPath + "/itemData.bin");
-            data.ItemObjectID.Clear();
+            data?.ItemObjectID?.Clear();
             BinarySaveSystem.SaveSystem(data, Application.persistentDataPath + "/itemData.bin");
             return;
         }
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         //Load Binary Save System String Array
         //Compare to itemObject reference and destroy the ones that are in both lists
         data = BinarySaveSystem.LoadSystem<ItemGameData>(Application.persistentDataPath + "/itemData.bin");
+        if (data == null) return;
         Debug.Log("WTF");
         for (int i = 0; i < data.ItemObjectID.Count; i++)
         {
@@ -59,7 +60,11 @@ public class GameManager : MonoBehaviour
     public void RegisterItemAsCollected(GameObject item)
     {
         //Save itemObjects into Serializable class and request save through BinarySaveSystem
-        data.ItemObjectID.Add(item.name);
+        if (data == null)
+        {
+            data = new ItemGameData();
+        }
+        data.ItemObjectID?.Add(item.name);
         BinarySaveSystem.SaveSystem(data, Application.persistentDataPath + "/itemData.bin");
         Debug.Log("Should have saved: " + item.name);
     }

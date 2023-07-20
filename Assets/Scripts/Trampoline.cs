@@ -38,8 +38,7 @@ public class Trampoline : MonoBehaviour
             if (bounceCount >= 4)
             {
                 //"Destroy" Trampoline but keep it's children
-                //sr.enabled = false;
-                sr.sprite = sprites[6];
+                sr.enabled = false;
                 boxCollider.enabled = false;
                 return;
             }
