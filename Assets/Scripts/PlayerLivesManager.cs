@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLivesManager : MonoBehaviour
 {
     public static PlayerLivesManager Instance { get; private set; }
+    public bool AlreadyDied = false;
 
     private void Awake()
     {
@@ -14,7 +15,6 @@ public class PlayerLivesManager : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
-
-
 }

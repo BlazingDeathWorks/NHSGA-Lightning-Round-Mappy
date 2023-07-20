@@ -196,7 +196,7 @@ public class Paul : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
             
         }
 
@@ -261,7 +261,7 @@ public class Paul : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
         }
     }
 
@@ -269,7 +269,7 @@ public class Paul : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Instance.LoseLife();
+            PlayerLives.Instance?.LoseLife();
         }
     }
 

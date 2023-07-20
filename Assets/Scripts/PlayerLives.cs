@@ -18,6 +18,7 @@ public class PlayerLives : MonoBehaviour
             return;
         }
         Instance = this;
+        Debug.Log("Get called everytime");
 
         if (s_lives == 2)
         {
@@ -38,12 +39,14 @@ public class PlayerLives : MonoBehaviour
 
             //Game Over (return in the future)
             SceneController.Instance.NextScene();
+            PlayerLivesManager.Instance.AlreadyDied = false;
             s_lives = 3;
             Instance = null;
             //AudioManager.Instance.Play("LifeLossSound");
         }
         else
         {
+            PlayerLivesManager.Instance.AlreadyDied = false;
             SceneController.Instance.ReloadScene();
             Instance = null;
         }
@@ -54,7 +57,10 @@ public class PlayerLives : MonoBehaviour
     public void LoseLife()
     {
         if (!CanDie) return;
+        if (PlayerLivesManager.Instance.AlreadyDied) return;
+        Debug.Log("ONLY ONCE BOY");
         s_lives--;
+        PlayerLivesManager.Instance.AlreadyDied = true;
         CheckLives();
     }
 
