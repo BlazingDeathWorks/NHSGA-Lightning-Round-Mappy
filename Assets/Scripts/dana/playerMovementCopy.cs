@@ -80,6 +80,7 @@ public class playerMovementCopy : MonoBehaviour
 
     private void Update()
     {
+        //17 and 5.72
         
         if (transform.position.x < firstXPos && firstBool)
         {

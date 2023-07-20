@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/FINAL LEVEL DESIGNS/Starting Menu 2.unity
     guid: 12890e3d033694d0e8914d77359b6e2f
   - enabled: 1
-    path: Assets/Scenes/FINAL LEVEL DESIGNS/pre level.unity
+    path: Assets/Scenes/FINAL LEVEL DESIGNS/Pre Level Final.unity
+    guid: 34869629f950f445894bd765af540a32
+  - enabled: 0
+    path: Assets/Scenes/pre level.unity
     guid: 1940366bde0cd4dc4a3fd45685063bb7
   - enabled: 1
+    path: Assets/Scenes/FINAL LEVEL DESIGNS/LEVEL 1 FINAL DESIGN 1.unity
+    guid: 8510adce77e7244ec9371a19d5f88221
+  - enabled: 0
     path: Assets/Scenes/Level 1 - JASON.unity
     guid: c6a14c5c881dc4795b3b1f9f21944cfb
   - enabled: 0
