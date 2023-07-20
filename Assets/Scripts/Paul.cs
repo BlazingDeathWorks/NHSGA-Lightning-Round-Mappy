@@ -223,12 +223,14 @@ public class Paul : MonoBehaviour
             transform.position = collision.transform.position;
             canMove = false;
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
+            animator.speed = 0;
             StartCoroutine("UnHideTimer");
         }
     }
 
     public void UnHide()
     {
+        animator.speed = 1;
         sr.sortingLayerName = "Enemy";
         if (previousColliderItem != null)
         {
