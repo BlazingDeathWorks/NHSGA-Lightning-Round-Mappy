@@ -17,6 +17,11 @@ public class BonusItem : MonoBehaviour
         canDoStuff = false;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.AddToCollectedCount();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!canDoStuff) return;

@@ -152,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Invinsible Trampoline"))
         {
+            StopCoroutine("ResetPlayerLayer");
             gameObject.layer = LayerMask.NameToLayer("Air Enemy");
             moveTowardsPos = collision.transform.parent.position;
             groundScanner.SetCurrentGroundedNone();
@@ -162,12 +163,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Invinsible Trampoline"))
         {
-            gameObject.layer = LayerMask.NameToLayer("Player");
+            StartCoroutine("ResetPlayerLayer");
             if (rb.velocity == new Vector2(x * speed, rb.velocity.y))
             {
                 PlayerLives.Instance.CanDie = true;
             }
         }
+    }
+
+    private IEnumerator ResetPlayerLayer()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

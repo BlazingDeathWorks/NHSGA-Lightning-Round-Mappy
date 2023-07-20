@@ -22,22 +22,27 @@ public class items : MonoBehaviour
         if (collision.gameObject.CompareTag("tvItem"))
         {
             addScore(collision, 100);
+            GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("ringItem"))
         {
             addScore(collision, 200);
+            GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("gemItem"))
         {
             addScore(collision, 500);
+            GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("necklaceItem"))
         {
             addScore(collision, 300);
+            GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("crownItem"))
         {
             addScore(collision, 400);
+            GameManager.Instance.RegisterItemAsCollected(collision.gameObject);
         }
 
 
