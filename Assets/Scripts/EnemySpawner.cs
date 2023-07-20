@@ -19,25 +19,28 @@ public class EnemySpawner : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator RespawnTimer(BasicEnemyAI wolfer = null, Paul paul = null)
+    private IEnumerator RespawnTimer()
     {
         yield return new WaitForSecondsRealtime(respawnTime);
         if (wolfer != null)
         {
-            Debug.Log("bro");
+            
             wolfer.transform.position = transform.position;
+            wolfer.transform.localScale = new Vector3(wolfer.transform.localScale.x * -1, wolfer.transform.localScale.y, wolfer.transform.localScale.z);
             wolfer.gameObject.SetActive(true);
         }
         if (paul != null)
         {
             paul.gameObject.SetActive(true);
+            paul.transform.localScale = new Vector3(paul.transform.localScale.x * -1, paul.transform.localScale.y, paul.transform.localScale.z);
             paul.transform.position = transform.position;
         }
     }
 
     public void RequestNewEnemy(BasicEnemyAI wolfer = null, Paul paul = null)
     {
-        Debug.Log(wolfer);
+        this.wolfer = wolfer;
+        this.paul = paul;
         wolfer?.gameObject.SetActive(false);
         paul?.gameObject.SetActive(false);
         StartCoroutine(RespawnTimer());
