@@ -227,7 +227,7 @@ public class Paul : MonoBehaviour
         if (collision.gameObject.CompareTag("tvItem") || collision.gameObject.CompareTag("ringItem") || collision.gameObject.CompareTag("gemItem") || collision.gameObject.CompareTag("necklaceItem") || collision.gameObject.CompareTag("crownItem"))
         {
             int rand = Random.Range(1, 11);
-            if (rand != 1) return;
+            if (rand != 1 && rand != 2) return;
             if (previousColliderItem == collision) return;
             previousColliderItem = collision;
             sr.sortingLayerName = "Paul Mode";
