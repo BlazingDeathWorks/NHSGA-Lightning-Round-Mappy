@@ -13254,8 +13254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1117185212}
   highScoreText: {fileID: 782554759}
-  score: 0
-  highScore: 0
 --- !u!4 &2111681056
 Transform:
   m_ObjectHideFlags: 0
@@ -13403,6 +13401,10 @@ PrefabInstance:
       propertyPath: pointsDisplay
       value: 
       objectReference: {fileID: 1275171614}
+    - target: {fileID: 1736959411934865819, guid: 225fd9eb06835480ab0c33f1197c922b, type: 3}
+      propertyPath: KnockbackSpeed
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 225fd9eb06835480ab0c33f1197c922b, type: 3}
 --- !u!1001 &2137040242618029147
