@@ -26,9 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FINAL LEVEL DESIGNS/LEVEL 2 FINAL DESIGN.unity
     guid: f504b59bb97ce4715a9e30fe5cb2703e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FINAL LEVEL DESIGNS/Level 3 Transition.unity
     guid: 0035ff07f820748749ed965f99981a47
+  - enabled: 1
+    path: Assets/Scenes/FINAL LEVEL DESIGNS/Level 3 Modified.unity
+    guid: f093ecb155c694d24a6b4b99e19edfc6
   - enabled: 0
     path: Assets/Scenes/FINAL LEVEL DESIGNS/LEVEL 3 FINAL DESIGN.unity
     guid: 03d81e031858b44f0a3f2216887995cf

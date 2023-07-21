@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89936aa8eb7f14b6b94b96f1357773b9
+guid: c179b1e0e3398854580d0eeb9e204f3f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,23 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: catty_idle_0
+      name: catty_idle 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02384ffe649a543bda115271c33e06f7
-      internalID: -747202661
+      spriteID: 8212f0794d13f44408dc07b362969c8e
+      internalID: -1450818150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catty_idle_1
+      name: catty_idle 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 149e1a7f18a864f47a87c7a6cdc9a296
-      internalID: -1075265949
+      spriteID: fbda7f53b8f200d40bbbde74e748c870
+      internalID: 2089311158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catty_idle_2
+      name: catty_idle 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3ac1fa63574e45b2893433b8f9f9641
-      internalID: 1720995099
+      spriteID: 448c003c894f9c747b895e8d59883c23
+      internalID: 1955502810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catty_idle_3
+      name: catty_idle 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2845ef79cb62541d8999ff93792b2ff7
-      internalID: 1246352489
+      spriteID: de7f17ef2abc00843908dc41694030a2
+      internalID: 1460868250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catty_idle_4
+      name: catty_idle 1_4
       rect:
         serializedVersion: 2
         x: 128
@@ -215,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04289475f37174e97a3dc91f9bb54a7c
-      internalID: -1951028995
+      spriteID: c080c981817b49d40a3ca8bc0cea26ca
+      internalID: 2051388356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catty_idle_5
+      name: catty_idle 1_5
       rect:
         serializedVersion: 2
         x: 160
@@ -236,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aeb285af897f4562979780ceea0ee6c
-      internalID: -1022658105
+      spriteID: 873da9ab02875cd4194d4ed148efcc71
+      internalID: 570981041
       vertices: []
       indices: 
       edges: []
@@ -253,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      catty_idle_0: -747202661
-      catty_idle_1: -1075265949
-      catty_idle_2: 1720995099
-      catty_idle_3: 1246352489
-      catty_idle_4: -1951028995
-      catty_idle_5: -1022658105
+      catty_idle 1_0: -1450818150
+      catty_idle 1_1: 2089311158
+      catty_idle 1_2: 1955502810
+      catty_idle 1_3: 1460868250
+      catty_idle 1_4: 2051388356
+      catty_idle 1_5: 570981041
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
