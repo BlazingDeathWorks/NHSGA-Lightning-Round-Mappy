@@ -91,7 +91,7 @@ public class Paul : MonoBehaviour
             {
                 leftPlatform = true;
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
-                targetFloor = Random.Range(0, floorBoxGameObject.transform.childCount);
+                targetFloor = Random.Range(0, HierarchyManager.Instance.GetHierarchyObject("Floor Box").transform.childCount);
                 fallHandler.StartFall();
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isFalling", true);
