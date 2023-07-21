@@ -5390,6 +5390,25 @@ MonoBehaviour:
   pitch: 1
   loop: 0
   source: {fileID: 0}
+--- !u!114 &709728345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709728336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01745c85a26e445b7a18ea91c6855cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: MainTheme
+  clip: {fileID: 8300000, guid: 6ac5247271c7349ad830dd652195c29f, type: 3}
+  mixer: {fileID: 0}
+  volume: 1
+  pitch: 1
+  loop: 1
+  source: {fileID: 0}
 --- !u!1001 &731547485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14062,7 +14081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236096634103983160, guid: 3561e40c820994c3db4fe45e092b69e4, type: 3}
       propertyPath: sounds.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8236096634103983160, guid: 3561e40c820994c3db4fe45e092b69e4, type: 3}
       propertyPath: sounds.Array.data[0]
@@ -14082,6 +14101,10 @@ PrefabInstance:
       objectReference: {fileID: 709728344}
     - target: {fileID: 8236096634103983160, guid: 3561e40c820994c3db4fe45e092b69e4, type: 3}
       propertyPath: sounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 709728343}
+    - target: {fileID: 8236096634103983160, guid: 3561e40c820994c3db4fe45e092b69e4, type: 3}
+      propertyPath: sounds.Array.data[5]
       value: 
       objectReference: {fileID: 709728343}
     - target: {fileID: 8236096634103983163, guid: 3561e40c820994c3db4fe45e092b69e4, type: 3}
