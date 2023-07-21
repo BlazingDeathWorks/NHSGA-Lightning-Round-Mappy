@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool FallDamage = false;
     public bool CanMove => canMove;
     [SerializeField] private float speed = 1;
     [SerializeField] private float raycastDistance = 1;
@@ -44,6 +45,12 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 0;
             rb.simulated = false;
             return; 
+        }
+
+        if (FallDamage && groundScanner.CurrentGroundedObject == GroundedObjectType.Platform)
+        {
+            PlayerLives.Instance.LoseLife();
+            Debug.Log("DIE BY FALL");
         }
 
         x = Input.GetAxisRaw("Horizontal");
