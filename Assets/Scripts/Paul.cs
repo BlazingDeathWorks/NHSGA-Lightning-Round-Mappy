@@ -53,6 +53,7 @@ public class Paul : MonoBehaviour
         playerTransform = player?.transform;
 
         floorTransform = HierarchyManager.Instance.GetHierarchyObject("Floor 1").transform;
+        floorBoxGameObject = HierarchyManager.Instance.GetHierarchyObject("Floor Box");
     }
 
     private void Update()

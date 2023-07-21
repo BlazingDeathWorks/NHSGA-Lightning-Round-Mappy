@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6194882969489139962
 Transform:
   m_ObjectHideFlags: 0
@@ -193,9 +193,6 @@ MonoBehaviour:
   FrontKnockBack: {fileID: 6194882970814560267}
   RegularDoorOpened: {fileID: 6194882969489139909}
   speedUpTransform: {fileID: 6194882970750032006}
-  pointsDisplay: {fileID: 0}
-  canvas: {fileID: 0}
-  size: 1
   randomNumber: 0
 --- !u!1 &6194882969889181400
 GameObject:
