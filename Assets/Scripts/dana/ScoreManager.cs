@@ -6,12 +6,18 @@ using TMPro;
 //Zero out score after congrats seen
 public class ScoreManager : MonoBehaviour
 {
-
+    public static int Score => score;
+    public static int HighScore => highScore;
     public static ScoreManager Instance = null;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private static int score = 0;
-    [SerializeField] private static int highScore;
+    [SerializeField] private static int highScore = 20000;
+
+    public void SetHighscore(int thing)
+    {
+        highScore = thing;
+    }
     
 
 
@@ -23,8 +29,14 @@ public class ScoreManager : MonoBehaviour
             Instance = this;
         }
 
+        
+    }
+
+    private void Start()
+    {
         scoreText.SetText(score.ToString());
-        highScore = 20000;
+        highScore = PlayerPrefs.GetInt("High Score");
+        if (highScore == 0) highScore = 20000;
         highScoreText.SetText(highScore.ToString());
     }
 
