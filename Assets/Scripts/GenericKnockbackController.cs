@@ -15,7 +15,7 @@ public class GenericKnockbackController : MonoBehaviour
     protected virtual void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
-        if (CompareTag("Player") || CompareTag("Enemy")) animator = GetComponent<Animator>();
+        if (CompareTag("Enemy")) animator = GetComponent<Animator>();
     }
 
     protected virtual void FixedUpdate()
@@ -24,7 +24,7 @@ public class GenericKnockbackController : MonoBehaviour
         Rb.velocity = Vector2.zero;
         Rb.velocity = Direction * KnockbackSpeed;
         Knockbackable = false;
-        if (CompareTag("Player") || CompareTag("Enemy")) 
+        if (CompareTag("Enemy")) 
         {
             animator.SetBool("isSplat", true);
             StartCoroutine(Unsplat());
