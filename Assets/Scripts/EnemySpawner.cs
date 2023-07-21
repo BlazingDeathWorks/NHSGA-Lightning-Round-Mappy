@@ -25,9 +25,9 @@ public class EnemySpawner : MonoBehaviour
         if (wolfer != null)
         {
             wolfer = Instantiate(wolferPrefab);
+            wolfer.gameObject.SetActive(true);
             wolfer.transform.position = transform.position;
             wolfer.transform.localScale = new Vector3(wolfer.transform.localScale.x * -1, wolfer.transform.localScale.y, wolfer.transform.localScale.z);
-            wolfer.gameObject.SetActive(true);
         }
         if (paul != null)
         {
