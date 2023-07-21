@@ -7405,6 +7405,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8533372272102148328, guid: 7e47e6edaddd649b48b2eb84280153a3, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: 8533372272102148328, guid: 7e47e6edaddd649b48b2eb84280153a3, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e47e6edaddd649b48b2eb84280153a3, type: 3}
 --- !u!1001 &481108870
@@ -7592,6 +7600,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2366930146059133572, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: 2366930146059133572, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 3280465927137945688, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -7705,6 +7721,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8381319959078272543, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: 8381319959078272543, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
 --- !u!1001 &598187447
@@ -7714,6 +7738,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7408922801443027669, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: -7408922801443027669, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 1248243408851459032, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7899,6 +7931,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8381319959078272543, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: 8381319959078272543, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92c564d8541c4d4f9a31852edf2d33a, type: 3}
 --- !u!1 &647561458
@@ -20442,6 +20482,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6380215899466084790, guid: 4f675036369644f1caf9a0671638c967, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: -6380215899466084790, guid: 4f675036369644f1caf9a0671638c967, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 4792165874789079659, guid: 4f675036369644f1caf9a0671638c967, type: 3}
       propertyPath: m_Name
       value: gem
@@ -21149,6 +21197,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6380215899466084790, guid: 4f675036369644f1caf9a0671638c967, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: -6380215899466084790, guid: 4f675036369644f1caf9a0671638c967, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 4792165874789079659, guid: 4f675036369644f1caf9a0671638c967, type: 3}
       propertyPath: m_Name
       value: gem (1)
@@ -22494,6 +22550,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2366930146059133572, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: 2366930146059133572, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 3280465927137945688, guid: 640b802459deb4d07bd2eecb38e49aeb, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -22555,6 +22619,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7408922801443027669, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 429736487}
+    - target: {fileID: -7408922801443027669, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
+      propertyPath: bonusPointsDisplay
+      value: 
+      objectReference: {fileID: 1446930351}
     - target: {fileID: 1248243408851459032, guid: dc73c976e804d4aec84526b2cd01c9df, type: 3}
       propertyPath: m_RootOrder
       value: 7
