@@ -92,7 +92,7 @@ public class Paul : MonoBehaviour
             {
                 leftPlatform = true;
                 transform.position = new Vector2(moveTowardsPos.x, transform.position.y);
-                targetFloor = Random.Range(0, HierarchyManager.Instance.GetHierarchyObject("Floor Box").transform.childCount);
+                targetFloor = Random.Range(1, 7);
                 fallHandler.StartFall();
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isFalling", true);
@@ -185,7 +185,7 @@ public class Paul : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Sign(floorTransform.position.x - transform.position.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
 
-            targetFloor = Random.Range(0, floorBoxGameObject.transform.childCount);
+            targetFloor = Random.Range(1, 7);
             floorCount = 0;
             canShootRaycast = true;
         }
@@ -202,7 +202,7 @@ public class Paul : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Sign(floorTransform.position.x - transform.position.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
 
-            targetFloor = Random.Range(0, floorBoxGameObject.transform.childCount);
+            targetFloor = Random.Range(1, 7);
             floorCount = 0;
             canShootRaycast = false;
         }
