@@ -63,6 +63,7 @@ public class RegularDoor : Door
             //score
             
             ScoreManager.Instance.IncreaseScoreHit();
+            FlipDoorOpenState();
         }
     }
 

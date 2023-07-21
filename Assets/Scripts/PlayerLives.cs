@@ -9,12 +9,14 @@ public class PlayerLives : MonoBehaviour
     public bool CanDie { private get; set; } = true;
     private static int s_lives = 3;
     private Animator animator;
+    private AudioSource audioSource;
 
     [SerializeField] public List<GameObject> hearts;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); 
 
         if (Instance != null)
         {
@@ -72,6 +74,7 @@ public class PlayerLives : MonoBehaviour
 
     IEnumerator Death()
     {  
+        audioSource.mute = true;
         animator.SetBool("isDying", true);
         Time.timeScale = 0.0000001f;
         yield return new WaitForSeconds(3.5f * Time.timeScale); 

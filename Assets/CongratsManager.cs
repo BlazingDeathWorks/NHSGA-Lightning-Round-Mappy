@@ -14,6 +14,7 @@ public class CongratsManager : MonoBehaviour
             ScoreManager.Instance.SetHighscore(ScoreManager.Score);
             PlayerPrefs.SetInt("High Score", ScoreManager.Score);
         }
+        if (highScoreText == null) return;
         highScoreText.text = "Highscore: " + ScoreManager.HighScore;
     }
 }
