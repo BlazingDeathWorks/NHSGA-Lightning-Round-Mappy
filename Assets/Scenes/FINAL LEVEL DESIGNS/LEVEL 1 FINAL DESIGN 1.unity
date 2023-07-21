@@ -11218,7 +11218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195214793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.666667, y: 3.5, z: -10}
+  m_LocalPosition: {x: 7.6666665, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14261,9 +14261,25 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5078593774105989699, guid: 6298832dab15147e6b5b189c67581216, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 76b1ba6e3dc76400682659c7354c7a1d, type: 2}
+    - target: {fileID: 5078593774105989699, guid: 6298832dab15147e6b5b189c67581216, type: 3}
       propertyPath: m_fontSizeBase
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5078593774105989699, guid: 6298832dab15147e6b5b189c67581216, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7738462164028219977, guid: 76b1ba6e3dc76400682659c7354c7a1d, type: 2}
+    - target: {fileID: 5078593774738816777, guid: 6298832dab15147e6b5b189c67581216, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 76b1ba6e3dc76400682659c7354c7a1d, type: 2}
+    - target: {fileID: 5078593774738816777, guid: 6298832dab15147e6b5b189c67581216, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7738462164028219977, guid: 76b1ba6e3dc76400682659c7354c7a1d, type: 2}
     - target: {fileID: 8445491863383914713, guid: 6298832dab15147e6b5b189c67581216, type: 3}
       propertyPath: m_Name
       value: CanvasForSmallPoints
