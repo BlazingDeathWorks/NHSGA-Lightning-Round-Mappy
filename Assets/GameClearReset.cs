@@ -13,12 +13,12 @@ public class GameClearReset : MonoBehaviour
         if (Input.GetKeyDown(input))
         {
             SceneManager.LoadScene(0);
-            AudioManagerGameOver.Instance.audioSource.Pause();
+            AudioManagerGameClear.Instance.audioSource.Pause();
         }
 
         if (Input.GetKey("escape"))
         {
-            AudioManagerGameOver.Instance.audioSource.Pause();
+            AudioManagerGameClear.Instance.audioSource.Pause();
             Application.Quit();
         }
     }
