@@ -19,7 +19,10 @@ public class ScoreManager : MonoBehaviour
         highScore = thing;
     }
     
-
+    public void ResetScore()
+    {
+        score = 0;
+    }
 
 
     private void Awake()
