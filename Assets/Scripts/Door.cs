@@ -69,6 +69,10 @@ public abstract class Door : MonoBehaviour
     {
         if (dir == null) dir = FrontKnockBack.transform.right;
         GenericKnockbackController controller = collision.GetComponent<GenericKnockbackController>();
+        for (int i = 0; i < genericKnockbackControllers.Count; i++)
+        {
+            if (genericKnockbackControllers[i] == controller) return;
+        }
         controller.SetDirection((Vector2)dir);
         genericKnockbackControllers.Add(controller);
     }

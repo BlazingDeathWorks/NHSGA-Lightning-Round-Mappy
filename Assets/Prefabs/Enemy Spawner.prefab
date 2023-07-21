@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnTime: 3
+  wolferPrefab: {fileID: 4463460293119735754, guid: 448452fb55f4f45acb9a1cbf72812f0d, type: 3}
+  paulPrefab: {fileID: 2836667882705832281, guid: bfd2df1b78800461cb74ada91e5f341c, type: 3}
