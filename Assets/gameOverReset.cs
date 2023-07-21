@@ -15,6 +15,7 @@ public class gameOverReset : MonoBehaviour
         {
             SceneManager.LoadScene(0);
             AudioManagerGameOver.Instance.audioSource.Pause();
+            ScoreManager.Instance?.ResetScore();
         }
 
         if (Input.GetKey("escape"))
