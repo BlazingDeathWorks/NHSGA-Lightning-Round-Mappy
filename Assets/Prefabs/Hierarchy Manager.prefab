@@ -47,6 +47,8 @@ MonoBehaviour:
   hierarchyObjectKeys:
   - Player
   - Floor 1
+  - Floor Box
   hierarchyObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
